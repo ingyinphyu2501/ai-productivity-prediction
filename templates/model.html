@@ -1,0 +1,489 @@
+{% extends 'base.html' %}
+
+{% block title %}Model Prediction — AI Productivity Prediction{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title"><i class="bi bi-stars text-primary me-2"></i>AI-Assisted Productivity Prediction</h1>
+        <p class="page-description">
+            Configure a developer profile and AI usage characteristics to predict the expected level of productivity improvement.
+        </p>
+    </div>
+</section>
+
+<section class="container pb-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-10 col-lg-11">
+            <div class="prediction-form-card">
+                <form id="predictionForm" onsubmit="runPrediction(event)">
+
+                    <div class="prediction-section">
+                        <div class="prediction-section-header">
+                            <div class="section-number">1</div>
+                            <div>
+                                <h3>Demographics & Professional Context</h3>
+                                <p>Provide basic demographic, educational, employment, and professional information.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-section-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Age Range</label>
+                                    <select id="age" class="form-select">
+                                        <option>Under 18 years old</option>
+                                        <option selected>18-24 years old</option>
+                                        <option>25-34 years old</option>
+                                        <option>35-44 years old</option>
+                                        <option>45-54 years old</option>
+                                        <option>55-64 years old</option>
+                                        <option>65 years or older</option>
+                                        <option>Prefer not to say</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Organization Size</label>
+                                    <select id="orgSize" class="form-select">
+                                        <option>Just me - I am a freelancer, sole proprietor, etc.</option>
+                                        <option selected>Less than 20 employees</option>
+                                        <option>20 to 99 employees</option>
+                                        <option>100 to 499 employees</option>
+                                        <option>500 to 999 employees</option>
+                                        <option>1,000 to 4,999 employees</option>
+                                        <option>5,000 to 9,999 employees</option>
+                                        <option>10,000 or more employees</option>
+                                        <option>I don't know</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Highest Education Level</label>
+                                    <select id="edLevel" class="form-select">
+                                        <option>Primary/elementary school</option>
+                                        <option>Secondary school</option>
+                                        <option>Some college/university study without earning a degree</option>
+                                        <option>Associate degree</option>
+                                        <option selected>Bachelor's degree</option>
+                                        <option>Master's degree</option>
+                                        <option>Professional degree</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Remote Work Setup</label>
+                                    <select id="remoteWork" class="form-select">
+                                        <option selected>Remote</option>
+                                        <option>In-person</option>
+                                        <option>Hybrid (some remote, leans heavy to in-person)</option>
+                                        <option>Hybrid (some in-person, leans heavy to flexibility)</option>
+                                        <option>Your choice (very flexible, you can come in when you want or just as needed)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="subsection-title">Professional Background</div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">Professional Role</label>
+                                    <select id="devType" class="form-select">
+                                        <option selected>Developer, full-stack</option>
+                                        <option>Developer, front-end</option>
+                                        <option>Developer, back-end</option>
+                                        <option>Developer, mobile</option>
+                                        <option>Developer, desktop or enterprise applications</option>
+                                        <option>Developer, embedded applications or devices</option>
+                                        <option>Developer, QA or test</option>
+                                        <option>Developer, game or graphics</option>
+                                        <option>Developer, AI apps or physical AI</option>
+                                        <option>Architect, software or solutions</option>
+                                        <option>Data scientist</option>
+                                        <option>Data engineer</option>
+                                        <option>AI/ML engineer</option>
+                                        <option>Applied scientist</option>
+                                        <option>Data or business analyst</option>
+                                        <option>Cloud infrastructure engineer</option>
+                                        <option>DevOps engineer or professional</option>
+                                        <option>System administrator</option>
+                                        <option>Cybersecurity or InfoSec professional</option>
+                                        <option>Support engineer or analyst</option>
+                                        <option>Database administrator or engineer</option>
+                                        <option>Senior executive (C-suite, VP, etc.)</option>
+                                        <option>Engineering manager</option>
+                                        <option>Founder, technology or otherwise</option>
+                                        <option>Financial analyst or engineer</option>
+                                        <option>Project manager</option>
+                                        <option>Product manager</option>
+                                        <option>Academic researcher</option>
+                                        <option>Student</option>
+                                        <option>UX, Research Ops or UI design professional</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Industry Sector</label>
+                                    <select id="industry" class="form-select">
+                                        <option selected>Software Development</option>
+                                        <option>Computer Systems Design and Services</option>
+                                        <option>Internet, Telecomm or Information Services</option>
+                                        <option>Banking/Financial Services</option>
+                                        <option>Fintech</option>
+                                        <option>Retail and Consumer Services</option>
+                                        <option>Healthcare</option>
+                                        <option>Insurance</option>
+                                        <option>Media & Advertising Services</option>
+                                        <option>Higher Education</option>
+                                        <option>Government</option>
+                                        <option>Transportation, or Supply Chain</option>
+                                        <option>Manufacturing</option>
+                                        <option>Energy</option>
+                                        <option>Other:</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Do you view AI as a threat to your job?</label>
+                                    <select id="aiThreat" class="form-select">
+                                        <option>Yes</option>
+                                        <option selected>No</option>
+                                        <option>I'm not sure</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Career / Industry Change</label>
+                                    <select id="newRole" class="form-select">
+                                        <option>I have strongly considered changing my career and/or the industry I work in</option>
+                                        <option>I have somewhat considered changing my career and/or the industry I work in</option>
+                                        <option>I have transitioned into a new career and/or industry voluntarily</option>
+                                        <option>I have transitioned into a new career and/or industry involuntarily</option>
+                                        <option selected>I have neither consider or transitioned into a new career or industry</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prediction-section">
+                        <div class="prediction-section-header">
+                            <div class="section-number">2</div>
+                            <div>
+                                <h3>AI Adoption & Attitude</h3>
+                                <p>Describe your AI adoption, usage frequency, trust, sentiment, and workflow changes.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-section-body">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label class="form-label">AI Workflow Change</label>
+                                    <select id="aiAgentChange" class="form-select">
+                                        <option>Yes, to a great extent</option>
+                                        <option selected>Yes, somewhat</option>
+                                        <option>Not at all or minimally</option>
+                                        <option>No, but my work changed somewhat</option>
+                                        <option>No, but my work changed significantly</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">General Sentiment Toward AI</label>
+                                    <select id="aiSentiment" class="form-select">
+                                        <option>Very favorable</option>
+                                        <option selected>Favorable</option>
+                                        <option>Indifferent</option>
+                                        <option>Unfavorable</option>
+                                        <option>Very unfavorable</option>
+                                        <option>Unsure</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">AI Tool Usage Frequency</label>
+                                    <select id="aiSelection" class="form-select">
+                                        <option selected>Yes, I use AI tools daily</option>
+                                        <option>Yes, I use AI tools weekly</option>
+                                        <option>Yes, I use AI tools monthly or infrequently</option>
+                                        <option>No, but I plan to soon</option>
+                                        <option>No, and I don't plan to</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">AI Agent Usage</label>
+                                    <select id="aiAgents" class="form-select">
+                                        <option selected>Yes, I use AI agents daily</option>
+                                        <option>Yes, I use AI agents weekly</option>
+                                        <option>Yes, I use AI agents monthly or infrequently</option>
+                                        <option>No, I use AI exclusively in copilot mode</option>
+                                        <option>No, but I plan to</option>
+                                        <option>No, and I don't plan to</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">AI Accuracy Trust</label>
+                                    <select id="aiAccuracy" class="form-select">
+                                        <option selected>Highly trust</option>
+                                        <option>Somewhat trust</option>
+                                        <option>Neither trust nor distrust</option>
+                                        <option>Somewhat distrust</option>
+                                        <option>Highly distrust</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Learning AI Tools</label>
+                                    <select id="learnCodeAI" class="form-select">
+                                        <option selected>Yes, required for my job/career</option>
+                                        <option>Yes, for personal curiosity/hobbies</option>
+                                        <option>No, learned unrelated to AI for job</option>
+                                        <option>No, learned unrelated to AI for curiosity</option>
+                                        <option>No, didn't spend time learning</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label">How Well Does AI Handle Complex Engineering Tasks?</label>
+                                    <select id="aiComplexity" class="form-select">
+                                        <option>Very well at handling complex tasks</option>
+                                        <option selected>Good, but not great at handling complex tasks</option>
+                                        <option>Neither good or bad at handling complex tasks</option>
+                                        <option>Bad at handling complex tasks</option>
+                                        <option>Very poor at handling complex tasks</option>
+                                        <option>I don't know</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prediction-section">
+                        <div class="prediction-section-header">
+                            <div class="section-number">3</div>
+                            <div>
+                                <h3>Technical Environment & Experience</h3>
+                                <p>Enter your experience and approximate number of technologies you have worked with.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-section-body">
+                            <div class="row g-4">
+                                <div class="col-md-3">
+                                    <label class="form-label">Work Experience</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="workExp" class="form-control" min="0" max="60" value="5">
+                                        <span>years</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Coding Experience</label>
+                                    <div class="input-with-unit">
+                                        <input type="number" id="yearsCode" class="form-control" min="0" max="70" value="5">
+                                        <span>years</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Programming Languages</label>
+                                    <input type="number" id="languageCount" class="form-control" min="0" max="100" value="4">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Databases</label>
+                                    <input type="number" id="databaseCount" class="form-control" min="0" max="50" value="2">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">DevOps Toolchain / Cloud-Native Stack</label>
+                                    <input type="number" id="platformCount" class="form-control" min="0" max="50" value="3">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Web Frameworks</label>
+                                    <input type="number" id="webframeCount" class="form-control" min="0" max="50" value="2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prediction-section">
+                        <div class="prediction-section-header">
+                            <div class="section-number">4</div>
+                            <div>
+                                <h3>AI Usage Patterns & Feedback</h3>
+                                <p>Select the AI-assisted activities, agent applications, models, and challenges that describe your experience.</p>
+                            </div>
+                        </div>
+
+                        <div class="prediction-section-body">
+                            <div class="input-group-section">
+                                <div class="input-group-title">
+                                    AI-Assisted Development Tasks
+                                </div>
+
+                                <div class="row g-2">
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_documenting"><span> Documenting Code</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_deployment"><span> Deployment & Monitoring</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_documentation"><span> Creating or Maintaining Documentation</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_testing" checked><span> Testing Code</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_learning" checked><span> Learning About a Codebase</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_generating"><span> Generating Content or Synthetic Data</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_search" checked><span> Search for Answers</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_writing" checked><span> Writing Code</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_predictive"><span> Predictive Analytics</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_debugging" checked><span> Debugging or Fixing Code</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_commit"><span> Committing and Reviewing Code</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_planning"><span> Project Planning</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="task_concepts" checked><span>Learning New Concepts or Technologies</span></label></div>
+                                </div>
+                            </div>
+
+                            <div class="input-group-section">
+                                <div class="input-group-title">
+                                    AI Agent Application Areas
+                                </div>
+
+                                <div class="row g-2">
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_business"><span>Business Process Automation</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_customer"><span>Customer Service Support</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_cyber"><span>Cybersecurity</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_data"><span>Data & Analytics</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_decision"><span>Decision Intelligence</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_it"><span>IT Operations</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_marketing"><span>Marketing</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_software" checked><span>Software Engineering</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="agent_robotics"><span>Robotics</span></label></div>
+                                </div>
+                            </div>
+
+                            <div class="input-group-section">
+                                <div class="input-group-title">
+                                    AI Models & LLM Providers
+                                </div>
+
+                                <div class="provider-grid">
+                                    <label class="provider-card"><input type="checkbox" id="llm_openai" checked><span>OpenAI</span></label>
+                                    <label class="provider-card"><input type="checkbox" id="llm_claude" checked><span>Claude</span></label>
+                                    <label class="provider-card"><input type="checkbox" id="llm_gemini"><span>Gemini</span></label>
+                                    <label class="provider-card"><input type="checkbox" id="llm_deepseek"><span>DeepSeek</span></label>
+                                    <label class="provider-card"><input type="checkbox" id="llm_llama"><span>Llama</span></label>
+                                </div>
+                            </div>
+
+                            <div class="input-group-section">
+                                <div class="input-group-title">
+                                    AI-Native Development Environment
+                                </div>
+
+                                <div class="ai-editor-toggle">
+                                    <div>
+                                        <strong>Have you used AI-native code editors or CLI agents?</strong>
+                                        <small>Examples include Cursor, Claude Code, Windsurf, Cline/Roo, Aider and Copilot.</small>
+                                    </div>
+
+                                    <label class="switch">
+                                        <input type="checkbox" id="hasAiEditor">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="input-group-section">
+                                <div class="input-group-title">
+                                    AI-Related Frustrations
+                                </div>
+
+                                <div class="row g-2">
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="fr_almost"><span>Solutions are almost right, but not quite</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="fr_regular"><span>I don't use AI tools regularly</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="fr_debugging"><span>Debugging AI-generated code takes more time</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="fr_confidence"><span>Lower confidence in my own problem-solving</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="fr_noissues"><span>I haven't encountered any problems</span></label></div>
+                                    <div class="col-md-6"><label class="choice-card"><input type="checkbox" id="fr_understanding"><span>Hard to understand how the code works</span></label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" m-4 ">
+                        
+
+                        <button type="submit" class="predict-btn" id="predictBtn">
+                            <i class="bi bi-stars me-2"></i>
+                            Predict Productivity
+                        </button>
+                    </div>
+
+                    <div class="prediction-result-wrapper" id="predictionResultWrapper">
+                        
+
+                        <div class="prediction-result-card">
+                            <div class="result-main">
+                                <div class="predicted-class" id="predictedClass">Agree</div>
+                                <div class="result-description" id="predictionDescription">On Productivity Improvement is predicted.</div>
+                            </div>
+
+                            <div class="confidence-box">
+                                <div class="confidence-label">Model Confidence</div>
+                                <div class="confidence-value" id="predictionConfidence">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="probability-card">
+                            <div class="probability-title">
+                                <i class="bi bi-bar-chart-fill"></i>
+                                Confidence by Productivity 
+                            </div>
+
+                            <div class="probability-item">
+                                <div class="probability-header">
+                                    <span><span class="probability-dot disagree"></span>Disagree</span>
+                                    <strong><span id="pDisagree">0</span>%</strong>
+                                </div>
+                                <div class="probability-bar">
+                                    <div class="probability-fill disagree" id="barDisagree" style="width:0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="probability-item">
+                                <div class="probability-header">
+                                    <span><span class="probability-dot neutral"></span>Neutral</span>
+                                    <strong><span id="pNeutral">0</span>%</strong>
+                                </div>
+                                <div class="probability-bar">
+                                    <div class="probability-fill neutral" id="barNeutral" style="width:0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="probability-item">
+                                <div class="probability-header">
+                                    <span><span class="probability-dot agree"></span>Agree</span>
+                                    <strong><span id="pAgree">0</span>%</strong>
+                                </div>
+                                <div class="probability-bar">
+                                    <div class="probability-fill agree" id="barAgree" style="width:0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/model.js') }}"></script>
+{% endblock %}

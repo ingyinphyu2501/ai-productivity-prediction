@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}Evaluation — AI Productivity Prediction{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title"><i class="bi bi-trophy-fill text-primary me-2"></i>Model Evaluation</h1>
+        <p class="page-description">Performance comparison, confusion matrices, and winning-model feature importance.</p>
+    </div>
+</section>
+
+<section class="container pb-5">
+    <div class="row g-4 mb-4">
+        <div class="col-md-6 col-xl-3">
+            <div class="model-metrics-card" style="border-left: 4px solid #6c757d;">
+                <div class="model-name">Logistic Regression</div>
+                <div class="metric-grid">
+                    <div class="metric-box"><div class="metric-name">Accuracy</div><div class="metric-number" style="color:#6c757d;">65.45%</div></div>
+                    <div class="metric-box"><div class="metric-name">Macro F1</div><div class="metric-number" style="color:#6c757d;">0.5527</div></div>
+                    <div class="metric-box"><div class="metric-name">Precision</div><div class="metric-number" style="color:#6c757d;">0.5370</div></div>
+                    <div class="metric-box"><div class="metric-name">Recall</div><div class="metric-number" style="color:#6c757d;">0.5990</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="model-metrics-card" style="border-left: 4px solid #a855f7;">
+                <div class="model-name">LightGBM</div>
+                <div class="metric-grid">
+                    <div class="metric-box"><div class="metric-name">Accuracy</div><div class="metric-number" style="color:#a855f7;">66.44%</div></div>
+                    <div class="metric-box"><div class="metric-name">Macro F1</div><div class="metric-number" style="color:#a855f7;">0.5710</div></div>
+                    <div class="metric-box"><div class="metric-name">Precision</div><div class="metric-number" style="color:#a855f7;">0.5556</div></div>
+                    <div class="metric-box"><div class="metric-name">Recall</div><div class="metric-number" style="color:#a855f7;">0.6091</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="model-metrics-card" style="border-left: 4px solid #f97316;">
+                <div class="model-name">XGBoost</div>
+                <div class="metric-grid">
+                    <div class="metric-box"><div class="metric-name">Accuracy</div><div class="metric-number" style="color:#f97316;">66.60%</div></div>
+                    <div class="metric-box"><div class="metric-name">Macro F1</div><div class="metric-number" style="color:#f97316;">0.5734</div></div>
+                    <div class="metric-box"><div class="metric-name">Precision</div><div class="metric-number" style="color:#f97316;">0.5572</div></div>
+                    <div class="metric-box"><div class="metric-name">Recall</div><div class="metric-number" style="color:#f97316;">0.6138</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <div class="model-metrics-card" style="border-left: 4px solid #22c55e;">
+                <div class="model-name">Random Forest <span class="model-winner-badge ms-2"><i class="bi bi-trophy-fill"></i> Winner</span></div>
+                <div class="metric-grid">
+                    <div class="metric-box"><div class="metric-name">Accuracy</div><div class="metric-number" style="color:#22c55e;">69.06%</div></div>
+                    <div class="metric-box"><div class="metric-name">Macro F1</div><div class="metric-number" style="color:#22c55e;">0.5841</div></div>
+                    <div class="metric-box"><div class="metric-name">Precision</div><div class="metric-number" style="color:#22c55e;">0.5674</div></div>
+                    <div class="metric-box"><div class="metric-name">Recall</div><div class="metric-number" style="color:#22c55e;">0.6133</div></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <h2 class="section-title mb-3"><i class="bi bi-grid-3x3-gap-fill me-2 text-primary"></i>Confusion Matrices</h2>
+    <p class="section-subtitle">Per-class prediction performance on the held-out test set (rows = true, columns = predicted).</p>
+
+    <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+            <div class="confusion-matrix-container">
+                <div class="confusion-matrix-header">
+                    <h3 class="confusion-matrix-title"><span style="display:inline-block;width:10px;height:10px;background:#6c757d;border-radius:50%;margin-right:0.5rem;"></span>Logistic Regression</h3>
+                    <div class="text-muted small">Accuracy: 65.45% · Macro F1: 0.5527</div>
+                </div>
+                <div class="matrix-axis-wrapper">
+                    <div class="confusion-matrix-grid" id="cm_lr"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="confusion-matrix-container">
+                <div class="confusion-matrix-header">
+                    <h3 class="confusion-matrix-title"><span style="display:inline-block;width:10px;height:10px;background:#a855f7;border-radius:50%;margin-right:0.5rem;"></span>LightGBM</h3>
+                    <div class="text-muted small">Accuracy: 66.44% · Macro F1: 0.5710</div>
+                </div>
+                <div class="matrix-axis-wrapper">
+                    <div class="confusion-matrix-grid" id="cm_lgbm"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="confusion-matrix-container">
+                <div class="confusion-matrix-header">
+                    <h3 class="confusion-matrix-title"><span style="display:inline-block;width:10px;height:10px;background:#f97316;border-radius:50%;margin-right:0.5rem;"></span>XGBoost</h3>
+                    <div class="text-muted small">Accuracy: 66.60% · Macro F1: 0.5734</div>
+                </div>
+                <div class="matrix-axis-wrapper">
+                    <div class="confusion-matrix-grid" id="cm_xgb"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="confusion-matrix-container" style="border:2px solid rgba(34, 197, 94, 0.3);">
+                <div class="confusion-matrix-header">
+                    <h3 class="confusion-matrix-title"><span style="display:inline-block;width:10px;height:10px;background:#22c55e;border-radius:50%;margin-right:0.5rem;"></span>Random Forest <span class="model-winner-badge ms-2"><i class="bi bi-trophy-fill"></i> Winner</span></h3>
+                    <div class="text-muted small">Accuracy: 69.06% · Macro F1: 0.5841</div>
+                </div>
+                <div class="matrix-axis-wrapper">
+                    <div class="confusion-matrix-grid" id="cm_rf"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-card">
+        <h3 class="chart-title"><i class="bi bi-bar-chart-steps me-1 text-primary"></i>Winning Model — Feature Importance <span class="badge bg-success ms-2"><i class="bi bi-tree-fill me-1"></i>Random Forest</span></h3>
+        <p class="chart-subtitle">Top 25 features ranked by mean decrease in node impurity (Gini).</p>
+        <div class="chart-wrapper" style="height: 560px;">
+            <canvas id="featureImportanceChart"></canvas>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/evaluation.js') }}"></script>
+{% endblock %}

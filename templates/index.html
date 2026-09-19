@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}Home — AI Productivity Prediction{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="hero-title">
+                    Predicting AI-Assisted<br>
+                    <span class="text-primary">Productivity Improvement</span><br>
+                    Among Software Developers
+                </h1>
+                <p class="hero-description">
+                    Exploring how AI usage, developer characteristics, attitudes, and experiences
+                    relate to productivity improvement among software developers.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="{{ url_for('descriptive') }}" class="btn btn-primary d-inline-flex align-items-center gap-2">
+                        <i class="bi bi-bar-chart-line"></i>
+                        Explore Statistics
+                    </a>
+                    <a href="{{ url_for('model') }}" class="btn btn-outline-light d-inline-flex align-items-center gap-2">
+                        <i class="bi bi-stars"></i>
+                        Try Prediction
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-icon-wrapper">
+                    <div class="hero-icon-circle">
+                        <i class="bi bi-braces-asterisk"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dataset-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Dataset</h2>
+            <p class="section-subtitle mb-2">
+                <strong class="text-dark">Stack Overflow Developer Survey 2025</strong>
+            </p>
+            <p class="section-subtitle" style="max-width: 650px; margin: 0 auto;">
+                This project uses the Stack Overflow Developer Survey 2025 to investigate AI usage,
+                developer characteristics, attitudes, and AI-assisted productivity.
+                
+            </p>
+            <p><a href="https://www.kaggle.com/datasets/aliaslam25/stack-overflow-developer-survey-2025?select=survey_results_public.csv" target="_blank">Stack Overflow Developer Survey 2025</a></p>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
+                    <div class="stat-number">49,000+</div>
+                    <div class="stat-label">Respondents</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-layout-three-columns"></i></div>
+                    <div class="stat-number">170+</div>
+                    <div class="stat-label">Original Columns</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-calendar-event-fill"></i></div>
+                    <div class="stat-number">2025</div>
+                    <div class="stat-label">Stack Overflow Developer Survey</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dataset-info-card mt-4">
+            <div class="row align-items-center g-4">
+                <div class="col-md-6">
+                    <h4 class="fw-bold mb-3 text-dark"><i class="bi bi-diagram-3-fill text-primary me-2"></i>Research Workflow</h4>
+                    <div class="d-flex align-items-center flex-wrap gap-2">
+                        <span class="badge bg-dark text-white px-3 py-2">Data Collection</span>
+                        <i class="bi bi-arrow-right text-primary"></i>
+                        <span class="badge bg-dark text-white px-3 py-2">Preprocessing</span>
+                        <i class="bi bi-arrow-right text-primary"></i>
+                        <span class="badge bg-dark text-white px-3 py-2">Exploration</span>
+                        <i class="bi bi-arrow-right text-primary"></i>
+                        <span class="badge bg-primary text-white px-3 py-2">Prediction</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border px-3 py-2"><i class="bi bi-filetype-csv me-1"></i> CSV Survey Data</span>
+                        <span class="badge bg-light text-dark border px-3 py-2"><i class="bi bi-graph-up me-1"></i> FP-Growth Rules</span>
+                        <span class="badge bg-light text-dark border px-3 py-2"><i class="bi bi-tree-fill me-1"></i> Random Forest Model</span>
+                        <span class="badge bg-light text-dark border px-3 py-2"><i class="bi bi-robot me-1"></i> LLM Usage Features</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

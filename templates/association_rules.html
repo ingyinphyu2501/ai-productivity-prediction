@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block title %}Association Rules — AI Productivity Prediction{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">
+            <i class="bi bi-diagram-3-fill text-primary me-2"></i>
+            Association Rule Mining
+        </h1>
+
+        <p class="page-description">
+            FP-Growth based frequent pattern discovery between developers' characteristics, AI usage, frustration,
+            attitudes, and productivity outcomes.
+        </p>
+    </div>
+</section>
+
+<section class="container pb-5">
+
+    <div class="row g-4 mb-4">
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="rules-summary-card">
+                <div class="rules-summary-value" id="totalRules">—</div>
+                <div class="rules-summary-label">
+                    Total Rules Discovered
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="rules-summary-card" style="border-top-color: #22c55e;">
+                <div class="rules-summary-value" id="highestSupport">—</div>
+                <div class="rules-summary-label">
+                    Highest Support
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="rules-summary-card" style="border-top-color: #a855f7;">
+                <div class="rules-summary-value" id="highestConfidence">—</div>
+                <div class="rules-summary-label">
+                    Highest Confidence
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="rules-summary-card" style="border-top-color: #eab308;">
+                <div class="rules-summary-value" id="highestLift">—</div>
+                <div class="rules-summary-label">
+                    Highest Lift
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rules-table-wrapper mb-4">
+
+        <h3 class="chart-title mb-3">
+            <i class="bi bi-table me-1 text-primary"></i>
+            Association Rules Table
+        </h3>
+
+        <div class="table-controls">
+
+            <input
+                type="text"
+                id="ruleSearch"
+                class="search-input"
+                placeholder="Search antecedents or consequents..."
+            >
+
+            <div class="d-flex gap-2 flex-wrap">
+
+                <select id="minSupport" class="filter-select">
+                    <option value="0.01">Min Support: 0.03</option>
+                    <option value="0.10">Support ≥ 0.10</option>
+                    <option value="0.20">Support ≥ 0.20</option>
+                    <option value="0.30">Support ≥ 0.30</option>
+                </select>
+
+                <select id="minConfidence" class="filter-select">
+                    <option value="0.15">Min Confidence: 0.50</option>
+                    <option value="0.60">Confidence ≥ 0.60</option>
+                    <option value="0.70">Confidence ≥ 0.70</option>
+                    <option value="0.80">Confidence ≥ 0.80</option>
+                </select>
+
+                <select id="minLift" class="filter-select">
+                    <option value="1.10">Min Lift ≥ 1.0</option>
+                    <option value="1.5">Lift ≥ 1.5</option>
+                    <option value="2.0">Lift ≥ 2.0</option>
+                    <option value="2.5">Lift ≥ 2.5</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+
+            <table class="rules-table" id="rulesTable">
+
+                <thead>
+                    <tr>
+                        <th data-sort="antecedents">
+                            # <i class="bi bi-arrow-down-up"></i>
+                            Antecedents
+                        </th>
+
+                        <th data-sort="consequents">
+                            <i class="bi bi-arrow-down-up"></i>
+                            Consequents
+                        </th>
+
+                        <th data-sort="support" style="text-align:center;">
+                            <i class="bi bi-arrow-down-up"></i>
+                            Support
+                        </th>
+
+                        <th data-sort="confidence" style="text-align:center;">
+                            <i class="bi bi-arrow-down-up"></i>
+                            Confidence
+                        </th>
+
+                        <th data-sort="lift" style="text-align:center;">
+                            <i class="bi bi-arrow-down-up"></i>
+                            Lift
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody id="rulesTableBody"></tbody>
+
+            </table>
+
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h3 class="chart-title">
+            Support vs Confidence
+        </h3>
+
+        <p class="chart-subtitle">
+            Scatter plot of rules — point size encodes Lift value
+        </p>
+
+        <div class="chart-wrapper" style="height: 380px;">
+            <canvas id="scatterChart"></canvas>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/association_rules.js') }}"></script>
+{% endblock %}

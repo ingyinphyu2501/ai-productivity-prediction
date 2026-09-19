@@ -1,0 +1,751 @@
+Research_Question,antecedent_str,consequent_str,support,confidence,lift
+RQ1,Task=agent_business_process + Task=generating_content,Task=agent_data_analytics,0.04194260485651214,0.5057034220532319,2.6593458562699808
+RQ1,Task=agent_business_process + Task=testing_code,Task=documentation,0.05350572900241774,0.7529585798816567,1.851355639807237
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=documentation,0.05739514348785872,0.7348586810228802,1.8068520632128868
+RQ1,Task=learning_codebase + Task=testing_code,Task=documentation,0.17428781667192264,0.7326557666813964,1.8014355927733585
+RQ1,Task=agent_business_process + Task=generating_content,Task=documentation,0.06075896142121308,0.7325728770595691,1.8012317858536264
+RQ1,Task=generating_content + Task=testing_code,Task=documentation,0.1808052139177967,0.7266582171525137,1.7866889686668033
+RQ1,Task=agent_it_operations + Task=testing_code,Task=documentation,0.04541154210028382,0.7152317880794702,1.758593951925562
+RQ1,Task=debugging_code + Task=documentation,Task=testing_code,0.19688846841164723,0.6813386686067662,1.745643618221429
+RQ1,Task=testing_code,Task=debugging_code + Task=documentation,0.19688846841164723,0.5044438459466738,1.7456436182214288
+RQ1,Task=generating_content + Task=learning_codebase,Task=documentation,0.18953011668243455,0.7092840283241542,1.7439697496633957
+RQ1,Task=agent_business_process + Task=documentation,Task=testing_code,0.05350572900241774,0.6795727636849132,1.7411192299850737
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=documentation,0.061915273835803634,0.7079326923076923,1.7406471186154242
+RQ1,Task=agent_business_process + Task=documentation,Task=learning_codebase,0.05739514348785872,0.7289719626168224,1.7224814407287212
+RQ1,Task=documentation + Task=learning_codebase,Task=testing_code,0.17428781667192264,0.6717990275526743,1.7212023024800942
+RQ1,Task=documentation + Task=learning_new_concepts,Task=learning_codebase,0.21128981393882057,0.7279971024990947,1.7201779523283378
+RQ1,Task=agent_business_process + Task=testing_code,Task=learning_codebase,0.051718700725323245,0.727810650887574,1.719737387454916
+RQ1,Task=agent_business_process + Task=debugging_code,Task=documentation,0.058761694523283926,0.69875,1.718068945463944
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=learning_codebase,0.06496373383790602,0.7253521126760563,1.7139281291324697
+RQ1,Task=agent_business_process + Task=documentation,Task=generating_content,0.06075896142121308,0.7716955941255006,1.7124189845849982
+RQ1,Task=documentation + Task=generating_content,Task=testing_code,0.1808052139177967,0.6646058732612056,1.702772871622367
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=testing_code,0.051718700725323245,0.6621803499327052,1.6965584887987677
+RQ1,Task=debugging_code + Task=testing_code,Task=documentation,0.19688846841164723,0.6891096394407653,1.694365469113466
+RQ1,Task=debugging_code + Task=documentation,Task=learning_codebase,0.20719016083254493,0.7169879956347763,1.6941646305200266
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=documentation,0.06769683590875644,0.6872998932764142,1.6899157107103975
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=documentation,0.18585094081782824,0.6868686868686869,1.6888554712281771
+RQ1,Task=agent_business_process + Task=debugging_code,Task=testing_code,0.05518763796909492,0.65625,1.6813644626986264
+RQ1,Task=documentation + Task=writing_code,Task=testing_code,0.21780721118469462,0.6559037670148781,1.6804773863755817
+RQ1,Task=testing_code,Task=documentation + Task=writing_code,0.21780721118469462,0.5580393213035281,1.6804773863755817
+RQ1,Task=agent_data_analytics + Task=documentation,Task=generating_content,0.07253232418795333,0.750816104461371,1.6660866810685848
+RQ1,Task=agent_business_process + Task=writing_code,Task=documentation,0.06496373383790602,0.6754098360655737,1.6606807367515644
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=learning_codebase,0.18995059392410385,0.7020202020202019,1.6587973625976604
+RQ1,Task=agent_data_analytics + Task=documentation,Task=learning_codebase,0.06769683590875644,0.7007616974972797,1.6558236533262847
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=documentation,0.049300956585724795,0.672883787661406,1.6544697523967318
+RQ1,Task=agent_it_operations + Task=documentation,Task=learning_codebase,0.049300956585724795,0.7,1.6540238450074516
+RQ1,Task=agent_it_operations + Task=documentation,Task=testing_code,0.04541154210028382,0.6447761194029851,1.6519674720928081
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=documentation,0.07253232418795333,0.6718597857838364,1.651951962305928
+RQ1,Task=agent_business_process + Task=debugging_code,Task=learning_codebase,0.058761694523283926,0.69875,1.6510702309985097
+RQ1,Task=documentation + Task=testing_code,Task=learning_codebase,0.17428781667192264,0.6986936367467341,1.6509370507629613
+RQ1,Task=agent_it_operations + Task=generating_content,Task=documentation,0.05077262693156733,0.6708333333333334,1.6494281468079608
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=documentation,0.060023126248291814,0.67018779342723,1.647840909504585
+RQ1,Task=documentation + Task=generating_content,Task=learning_codebase,0.18953011668243455,0.6966769706336939,1.6461718881366942
+RQ1,Task=agent_data_analytics + Task=documentation,Task=testing_code,0.061915273835803634,0.6409140369967355,1.6420725111634649
+RQ1,Task=agent_business_process + Task=testing_code,Task=generating_content,0.052559655208661835,0.7396449704142012,1.6412975515629336
+RQ1,Task=documentation + Task=learning_new_concepts,Task=testing_code,0.18585094081782824,0.6403477001086564,1.6406215112129405
+RQ1,Task=debugging_code + Task=generating_content,Task=documentation,0.20466729738252917,0.6672378341329678,1.640587623703004
+RQ1,Task=documentation,Task=debugging_code + Task=generating_content,0.20466729738252917,0.5032308089945722,1.640587623703004
+RQ1,Task=search_answers + Task=testing_code,Task=documentation,0.2234836539472301,0.664375,1.6335485590591885
+RQ1,Task=documentation,Task=search_answers + Task=testing_code,0.2234836539472301,0.5494959937968467,1.6335485590591883
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=learning_codebase,0.22054031325554505,0.6905859117840685,1.6317793787386596
+RQ1,Task=learning_codebase,Task=generating_content + Task=learning_new_concepts,0.22054031325554505,0.5211127670144063,1.6317793787386596
+RQ1,Task=testing_code + Task=writing_code,Task=documentation,0.21780721118469462,0.6632522407170294,1.6307879467410442
+RQ1,Task=documentation,Task=testing_code + Task=writing_code,0.21780721118469462,0.5355388989402946,1.6307879467410442
+RQ1,Task=generating_content + Task=learning_codebase,Task=testing_code,0.16987280563439505,0.6357199055861527,1.6287647352117074
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=documentation,0.052139177966992536,0.6613333333333333,1.6260697854742827
+RQ1,Task=debugging_code + Task=learning_codebase,Task=documentation,0.20719016083254493,0.6607442172309755,1.6246212816020342
+RQ1,Task=documentation,Task=debugging_code + Task=learning_codebase,0.20719016083254493,0.5094339622641509,1.624621281602034
+RQ1,Task=agent_business_process + Task=generating_content,Task=testing_code,0.052559655208661835,0.6337135614702155,1.6236243227218314
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=learning_codebase,0.2560706401766004,0.6869712351945854,1.6232382912086665
+RQ1,Task=learning_codebase,Task=debugging_code + Task=learning_new_concepts,0.2560706401766004,0.6050670640834575,1.6232382912086663
+RQ1,Task=debugging_code + Task=generating_content,Task=testing_code,0.1941553663407968,0.6329677861549007,1.6217135873125692
+RQ1,Task=documentation + Task=learning_codebase,Task=generating_content,0.18953011668243455,0.7305510534846029,1.6211178380683526
+RQ1,Task=documentation + Task=search_answers,Task=testing_code,0.2234836539472301,0.6317979197622585,1.6187162969831308
+RQ1,Task=testing_code,Task=documentation + Task=search_answers,0.2234836539472301,0.5725828171290062,1.6187162969831308
+RQ1,Task=agent_business_process + Task=generating_content,Task=learning_codebase,0.05676442762535478,0.6844106463878328,1.6171878984320551
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=learning_codebase,0.059182171764953224,0.68408262454435,1.6164128185023352
+RQ1,Task=debugging_code + Task=generating_content,Task=learning_codebase,0.2097130242825607,0.6836874571624401,1.6154790809702664
+RQ1,Task=generating_content + Task=testing_code,Task=learning_codebase,0.16987280563439505,0.6827207435572455,1.6131948418927167
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=generating_content,0.05676442762535478,0.7267833109017497,1.6127570880821893
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=learning_codebase,0.07368863660254389,0.6812439261418853,1.6097052830073908
+RQ1,Task=documentation + Task=writing_code,Task=learning_codebase,0.22621675601808053,0.6812282367837924,1.609668210761107
+RQ1,Task=learning_codebase,Task=documentation + Task=writing_code,0.22621675601808053,0.5345255837059116,1.609668210761107
+RQ1,Task=documentation + Task=testing_code,Task=generating_content,0.1808052139177967,0.7248209018120523,1.608402435021706
+RQ1,Task=debugging_code + Task=testing_code,Task=learning_codebase,0.19447072427204878,0.6806475349521708,1.6082960755091904
+RQ1,Task=agent_software_engineering + Task=documentation,Task=testing_code,0.21749185325344267,0.6258318209316395,1.6034306793758917
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=documentation,0.21749185325344267,0.5572313493132238,1.6034306793758917
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=documentation,0.07053505729002418,0.652089407191448,1.6033410521096523
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=learning_codebase,0.07999579522758331,0.6776491540516474,1.6012112276436468
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=documentation,0.20782087669504887,0.6507570770243581,1.6000651521666371
+RQ1,Task=documentation,Task=generating_content + Task=learning_new_concepts,0.20782087669504887,0.5109847505815456,1.6000651521666371
+RQ1,Task=agent_it_operations + Task=documentation,Task=generating_content,0.05077262693156733,0.7208955223880598,1.5996918834797325
+RQ1,Task=agent_business_process + Task=writing_code,Task=learning_codebase,0.06506885314832335,0.6765027322404372,1.5985023576262494
+RQ1,Task=agent_it_operations + Task=generating_content,Task=learning_codebase,0.05119310417323662,0.6763888888888889,1.5982333581718828
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=learning_codebase,0.0532954903815831,0.676,1.5973144560357677
+RQ1,Task=agent_it_operations + Task=testing_code,Task=learning_codebase,0.042888678650268054,0.6754966887417219,1.5961251862891208
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=learning_codebase,0.058971933144118575,0.6742788461538461,1.5932475567465323
+RQ1,Task=agent_business_process + Task=writing_code,Task=testing_code,0.05970776831703984,0.6207650273224044,1.5904491529539544
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=documentation,0.21749185325344267,0.6465625,1.5897516315585423
+RQ1,Task=documentation,Task=agent_software_engineering + Task=testing_code,0.21749185325344267,0.5347635047815973,1.5897516315585423
+RQ1,Task=debugging_code + Task=learning_codebase,Task=testing_code,0.19447072427204878,0.62018102581294,1.5889528948447342
+RQ1,Task=documentation + Task=learning_new_concepts,Task=generating_content,0.20782087669504887,0.7160449112640348,1.5889282110694574
+RQ1,Task=documentation + Task=search_answers,Task=learning_codebase,0.23756964154315147,0.6716196136701337,1.5869640796929911
+RQ1,Task=learning_codebase,Task=documentation + Task=search_answers,0.23756964154315147,0.561351217088922,1.586964079692991
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=generating_content,0.06254598969830757,0.7151442307692307,1.5869295701674113
+RQ1,Task=learning_codebase + Task=testing_code,Task=generating_content,0.16987280563439505,0.7140963323022537,1.5846042475370514
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=generating_content,0.07032481866918953,0.7139807897545358,1.5843478546617447
+RQ1,Task=learning_codebase + Task=writing_code,Task=documentation,0.22621675601808053,0.644311377245509,1.5842166274842406
+RQ1,Task=documentation,Task=learning_codebase + Task=writing_code,0.22621675601808053,0.5562160765055569,1.5842166274842406
+RQ1,Task=learning_codebase + Task=testing_code,Task=debugging_code,0.19447072427204878,0.8174988952717632,1.5774578074483334
+RQ1,Task=documentation,Task=generating_content + Task=writing_code,0.22958057395143489,0.564486947531662,1.5720036100318209
+RQ1,Task=generating_content + Task=writing_code,Task=documentation,0.22958057395143489,0.6393442622950819,1.5720036100318207
+RQ1,Task=debugging_code + Task=documentation,Task=generating_content,0.20466729738252917,0.7082575481993453,1.571647785402466
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=documentation,0.21128981393882057,0.6391096979332275,1.5714268690717996
+RQ1,Task=documentation,Task=learning_codebase + Task=learning_new_concepts,0.21128981393882057,0.5195140863272163,1.5714268690717994
+RQ1,Task=testing_code,Task=documentation,0.24944812362030905,0.6391058443307298,1.5714173939307916
+RQ1,Task=documentation,Task=testing_code,0.24944812362030905,0.6133367795295942,1.5714173939307916
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=testing_code,0.04835488279196889,0.6133333333333334,1.5714085645030973
+RQ1,Task=agent_it_operations + Task=testing_code,Task=generating_content,0.044885945548197206,0.7069536423841061,1.568754373687894
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=testing_code,0.06601492694207926,0.6103012633624879,1.5636401611546855
+RQ1,Task=generating_content + Task=writing_code,Task=testing_code,0.21864816566803322,0.6088992974238876,1.5600482134105689
+RQ1,Task=testing_code,Task=generating_content + Task=writing_code,0.21864816566803322,0.560193913277673,1.5600482134105687
+RQ1,Task=learning_codebase + Task=writing_code,Task=debugging_code,0.28319142226426997,0.8065868263473055,1.5564017198867988
+RQ1,Task=debugging_code,Task=learning_codebase + Task=writing_code,0.28319142226426997,0.5464503042596349,1.5564017198867985
+RQ1,Task=agent_business_process + Task=search_answers,Task=documentation,0.06811731315042574,0.6315789473684211,1.5529104487763736
+RQ1,Task=learning_codebase + Task=writing_code,Task=testing_code,0.21255124566382844,0.6053892215568862,1.5510551211070989
+RQ1,Task=testing_code,Task=learning_codebase + Task=writing_code,0.21255124566382844,0.5445731214651225,1.5510551211070989
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=generating_content,0.07558078419005572,0.6987366375121478,1.550520558118279
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=generating_content,0.05119310417323662,0.6987087517934003,1.550458678752185
+RQ1,Task=generating_content + Task=search_answers,Task=documentation,0.24419215809944286,0.6300515324111744,1.5491548792523913
+RQ1,Task=documentation,Task=generating_content + Task=search_answers,0.24419215809944286,0.6004135435513052,1.549154879252391
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=generating_content,0.1887942815095133,0.6977466977466977,1.548323847833995
+RQ1,Task=agent_business_process + Task=debugging_code,Task=generating_content,0.0586565752128666,0.6975,1.5477764170748776
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=generating_content,0.05476716072742563,0.6946666666666667,1.5414891532540238
+RQ1,Task=documentation + Task=learning_codebase,Task=debugging_code,0.20719016083254493,0.7986223662884927,1.5410333814406554
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=learning_codebase,0.07032481866918953,0.6514118792599806,1.539215401738747
+RQ1,Task=documentation,Task=learning_codebase + Task=search_answers,0.23756964154315147,0.5841302662186612,1.5388621496920865
+RQ1,Task=learning_codebase + Task=search_answers,Task=documentation,0.23756964154315147,0.6258654112434229,1.5388621496920862
+RQ1,Task=agent_business_process + Task=search_answers,Task=learning_codebase,0.0702196993587722,0.6510721247563352,1.5384125988094928
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=documentation,0.07957531798591401,0.6256198347107438,1.5382583322830978
+RQ1,Task=agent_software_engineering + Task=documentation,Task=learning_codebase,0.22590139808682855,0.6500302480338778,1.53595075746306
+RQ1,Task=learning_codebase,Task=agent_software_engineering + Task=documentation,0.22590139808682855,0.5337804272230502,1.53595075746306
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=documentation,0.054031325554504364,0.6245443499392467,1.535613957346098
+RQ1,Task=documentation + Task=writing_code,Task=generating_content,0.22958057395143489,0.6913580246913581,1.53414716325843
+RQ1,Task=generating_content,Task=documentation + Task=writing_code,0.22958057395143489,0.509447165850245,1.53414716325843
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=testing_code,0.058971933144118575,0.5987193169690501,1.5339662974216466
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=testing_code,0.053610848312835066,0.5985915492957746,1.53363894652591
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=learning_codebase,0.08251865867759907,0.6487603305785123,1.5329500806739662
+RQ1,Task=documentation + Task=search_answers,Task=generating_content,0.24419215809944286,0.6903417533432392,1.5318920222893013
+RQ1,Task=generating_content,Task=documentation + Task=search_answers,0.24419215809944286,0.5418707721017029,1.5318920222893013
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=generating_content,0.06181015452538632,0.6901408450704225,1.5314461999428342
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=generating_content,0.08146746557342584,0.6901157613535174,1.531390538314908
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=debugging_code,0.21465363187217493,0.7933177933177933,1.5307975999659569
+RQ1,Task=testing_code + Task=writing_code,Task=learning_codebase,0.21255124566382844,0.647247119078105,1.52937452652509
+RQ1,Task=learning_codebase,Task=testing_code + Task=writing_code,0.21255124566382844,0.5022354694485842,1.52937452652509
+RQ1,Task=testing_code + Task=writing_code,Task=debugging_code,0.2597498160412068,0.7909731113956466,1.5262732674861637
+RQ1,Task=debugging_code,Task=testing_code + Task=writing_code,0.2597498160412068,0.5012170385395538,1.5262732674861637
+RQ1,Task=search_answers + Task=testing_code,Task=learning_codebase,0.21696625670135605,0.645,1.524064828614009
+RQ1,Task=learning_codebase,Task=search_answers + Task=testing_code,0.21696625670135605,0.5126676602086438,1.524064828614009
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=learning_new_concepts,0.06496373383790602,0.8317631224764468,1.5239912527192678
+RQ1,Task=learning_codebase,Task=learning_new_concepts + Task=writing_code,0.2806685588142542,0.6631892697466468,1.5238936046134905
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=learning_codebase,0.2806685588142542,0.644927536231884,1.5238936046134905
+RQ1,Task=documentation + Task=testing_code,Task=debugging_code,0.19688846841164723,0.7892962494732406,1.523037570231022
+RQ1,Task=agent_business_process + Task=writing_code,Task=generating_content,0.06601492694207926,0.6863387978142077,1.5230093267101839
+RQ1,Task=debugging_code,Task=documentation + Task=writing_code,0.2619573215599706,0.505476673427992,1.5221904382147793
+RQ1,Task=documentation + Task=writing_code,Task=debugging_code,0.2619573215599706,0.7888572333016778,1.522190438214779
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=documentation,0.07305792074003994,0.6188780053428317,1.521681691606709
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=documentation,0.22590139808682855,0.6187733947595739,1.5214244777327026
+RQ1,Task=documentation,Task=agent_software_engineering + Task=learning_codebase,0.22590139808682855,0.5554406823468596,1.5214244777327026
+RQ1,Task=agent_it_operations + Task=writing_code,Task=documentation,0.05760538210869337,0.618510158013544,1.5207772378348008
+RQ1,Task=agent_it_operations + Task=generating_content,Task=testing_code,0.044885945548197206,0.5930555555555556,1.5194552922165365
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=testing_code,0.1887942815095133,0.5911784068466096,1.5146458885892262
+RQ1,Task=generating_content + Task=learning_codebase,Task=debugging_code,0.2097130242825607,0.7848151062155783,1.514390690756348
+RQ1,Task=generating_content + Task=learning_codebase,Task=learning_new_concepts,0.22054031325554505,0.8253343823760818,1.5122122456748202
+RQ1,Task=generating_content + Task=writing_code,Task=learning_codebase,0.22979081257226952,0.6399297423887588,1.512084361486404
+RQ1,Task=learning_codebase,Task=generating_content + Task=writing_code,0.22979081257226952,0.5429706905116741,1.512084361486404
+RQ1,Task=debugging_code + Task=testing_code,Task=generating_content,0.1941553663407968,0.6795437821927889,1.5079309540471195
+RQ1,Task=documentation,Task=learning_codebase,0.2594344581099548,0.6378909278883432,1.507266864630355
+RQ1,Task=learning_codebase,Task=documentation,0.2594344581099548,0.6130153999006458,1.5072668646303549
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=documentation,0.23252391464311994,0.6129121640343586,1.5070130308758989
+RQ1,Task=documentation,Task=agent_software_engineering + Task=generating_content,0.23252391464311994,0.5717239596795037,1.5070130308758989
+RQ1,Task=generating_content + Task=testing_code,Task=debugging_code,0.1941553663407968,0.7803126320236586,1.5057026507994047
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=generating_content,0.0861978345422054,0.6776859504132231,1.5038083616237443
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=testing_code,0.042888678650268054,0.5853658536585366,1.4997536670761265
+RQ1,Task=agent_business_process + Task=testing_code,Task=debugging_code,0.05518763796909492,0.7766272189349112,1.4985912238798804
+RQ1,Task=debugging_code + Task=learning_codebase,Task=learning_new_concepts,0.2560706401766004,0.8166275561515252,1.4962592337576
+RQ1,Task=agent_it_operations + Task=writing_code,Task=learning_codebase,0.058971933144118575,0.6331828442437923,1.4961421751841026
+RQ1,Task=generating_content + Task=search_answers,Task=learning_codebase,0.24534847051403344,0.6330349877949553,1.4957928064812245
+RQ1,Task=learning_codebase,Task=generating_content + Task=search_answers,0.24534847051403344,0.57973174366617,1.4957928064812245
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=debugging_code,0.2560706401766004,0.7745627980922098,1.494607687272047
+RQ1,Task=debugging_code + Task=writing_code,Task=learning_codebase,0.28319142226426997,0.6319493314567206,1.4932275186656194
+RQ1,Task=learning_codebase,Task=debugging_code + Task=writing_code,0.28319142226426997,0.669150521609538,1.4932275186656192
+RQ1,Task=documentation + Task=learning_codebase,Task=learning_new_concepts,0.21128981393882057,0.8144246353322528,1.4922229499067259
+RQ1,Task=search_answers + Task=testing_code,Task=debugging_code,0.26006517397245876,0.7731250000000001,1.491833291075051
+RQ1,Task=debugging_code,Task=search_answers + Task=testing_code,0.26006517397245876,0.5018255578093307,1.491833291075051
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=learning_new_concepts,0.07999579522758331,0.8121664887940235,1.4880854791790343
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=documentation,0.03868390623357511,0.6042692939244664,1.4857621589825403
+RQ1,Task=learning_codebase + Task=search_answers,Task=learning_new_concepts,0.3076842215915064,0.8105787870396013,1.4851764254829982
+RQ1,Task=learning_new_concepts,Task=learning_codebase + Task=search_answers,0.3076842215915064,0.5637519260400616,1.4851764254829982
+RQ1,Task=testing_code,Task=debugging_code + Task=writing_code,0.2597498160412068,0.6654995960140049,1.4850803792824838
+RQ1,Task=debugging_code + Task=writing_code,Task=testing_code,0.2597498160412068,0.5796387520525451,1.4850803792824836
+RQ1,Task=agent_software_engineering + Task=documentation,Task=generating_content,0.23252391464311994,0.6690865093768905,1.4847259070917564
+RQ1,Task=generating_content,Task=agent_software_engineering + Task=documentation,0.23252391464311994,0.515978539771402,1.4847259070917564
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=testing_code,0.06254598969830757,0.5793573515092503,1.484359408808914
+RQ1,Task=documentation,Task=generating_content,0.27204877536003363,0.6689066942362367,1.484326891128836
+RQ1,Task=generating_content,Task=documentation,0.27204877536003363,0.6036855609983672,1.484326891128836
+RQ1,Task=debugging_code + Task=learning_codebase,Task=generating_content,0.2097130242825607,0.6687898089171974,1.4840675185979237
+RQ1,Task=debugging_code + Task=search_answers,Task=learning_codebase,0.2912856091664039,0.6273488793298619,1.4823571507861344
+RQ1,Task=learning_codebase,Task=debugging_code + Task=search_answers,0.2912856091664039,0.6882762046696473,1.4823571507861342
+RQ1,Task=documentation + Task=learning_new_concepts,Task=debugging_code,0.22274781877430885,0.7674755523361102,1.4809320343556627
+RQ1,Task=agent_business_process + Task=search_answers,Task=testing_code,0.06233575107747293,0.5779727095516569,1.4808118464758717
+RQ1,Task=learning_codebase + Task=search_answers,Task=debugging_code,0.2912856091664039,0.7673774577679314,1.4807427496442864
+RQ1,Task=debugging_code,Task=learning_codebase + Task=search_answers,0.2912856091664039,0.5620689655172414,1.4807427496442862
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=generating_content,0.22054031325554505,0.6670906200317965,1.48029696019652
+RQ1,Task=generating_content + Task=search_answers,Task=testing_code,0.2239041311888994,0.5777054515866558,1.4801271104077178
+RQ1,Task=testing_code,Task=generating_content + Task=search_answers,0.2239041311888994,0.5736601131160786,1.4801271104077176
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=learning_new_concepts,0.059182171764953224,0.8077474892395983,1.4799888029923534
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=testing_code,0.07337327867129191,0.5768595041322313,1.477959726046301
+RQ1,Task=testing_code + Task=writing_code,Task=generating_content,0.21864816566803322,0.6658130601792573,1.4774620110765746
+RQ1,Task=generating_content + Task=writing_code,Task=debugging_code,0.2748869967413014,0.7655152224824356,1.4771493532404483
+RQ1,Task=debugging_code,Task=generating_content + Task=writing_code,0.2748869967413014,0.5304259634888439,1.4771493532404483
+RQ1,Task=search_answers + Task=testing_code,Task=generating_content,0.2239041311888994,0.665625,1.477044699090273
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=testing_code,0.21465363187217493,0.5758601240834743,1.4753992352292191
+RQ1,Task=testing_code,Task=debugging_code + Task=learning_new_concepts,0.21465363187217493,0.5499596014004847,1.4753992352292191
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=documentation,0.06380742142331547,0.5992102665350445,1.4733231495342152
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=testing_code,0.18995059392410385,0.5745627980922099,1.4720753833156996
+RQ1,Task=agent_business_process + Task=writing_code,Task=debugging_code,0.07337327867129191,0.7628415300546448,1.4719901572839424
+RQ1,Task=learning_codebase,Task=learning_new_concepts + Task=search_answers,0.3076842215915064,0.7270243417784402,1.4705895307970023
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=learning_codebase,0.3076842215915064,0.622368700829258,1.4705895307970023
+RQ1,Task=agent_it_operations + Task=testing_code,Task=debugging_code,0.04835488279196889,0.76158940397351,1.4695740365111565
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=generating_content,0.0572900241774414,0.6622114216281896,1.4694698516326028
+RQ1,Task=documentation,Task=debugging_code + Task=learning_new_concepts,0.22274781877430885,0.5476867407598863,1.4693017385360403
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=documentation,0.22274781877430885,0.5975747320924986,1.4693017385360398
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=debugging_code,0.3313360664354042,0.7613526570048309,1.469117206102831
+RQ1,Task=debugging_code,Task=learning_new_concepts + Task=writing_code,0.3313360664354042,0.6393509127789047,1.4691172061028308
+RQ1,Task=learning_codebase + Task=writing_code,Task=learning_new_concepts,0.2806685588142542,0.7994011976047904,1.4646963776607034
+RQ1,Task=learning_new_concepts,Task=learning_codebase + Task=writing_code,0.2806685588142542,0.5142526964560863,1.4646963776607034
+RQ1,Task=testing_code,Task=learning_codebase + Task=search_answers,0.21696625670135605,0.5558847293293833,1.4644506868209426
+RQ1,Task=learning_codebase + Task=search_answers,Task=testing_code,0.21696625670135605,0.5715868180559402,1.4644506868209424
+RQ1,Task=learning_codebase,Task=agent_software_engineering + Task=learning_new_concepts,0.28676547881845893,0.6775956284153005,1.4639943704553156
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=learning_codebase,0.28676547881845893,0.6195775607540313,1.4639943704553153
+RQ1,Task=learning_codebase + Task=testing_code,Task=learning_new_concepts,0.18995059392410385,0.7984975695978789,1.4630407125548193
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=learning_codebase,0.20824135393671817,0.6190625,1.462777337928465
+RQ1,Task=agent_it_operations + Task=search_answers,Task=learning_codebase,0.06601492694207926,0.6187192118226601,1.4619661853127088
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=testing_code,0.20824135393671817,0.5704002303484019,1.4614105551587253
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=learning_codebase,0.20824135393671817,0.5335308375976299,1.4614105551587253
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=learning_codebase,0.2745716388100494,0.618224852071006,1.4607980670023548
+RQ1,Task=learning_codebase,Task=agent_software_engineering + Task=debugging_code,0.2745716388100494,0.6487829110779931,1.4607980670023546
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=debugging_code,0.06601492694207926,0.7548076923076924,1.456487946637541
+RQ1,Task=agent_business_process + Task=search_answers,Task=generating_content,0.07074529591085882,0.6559454191033137,1.4555653771704744
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=generating_content,0.04194260485651214,0.6551724137931035,1.4538500518809876
+RQ1,Task=documentation + Task=search_answers,Task=debugging_code,0.26626721328708086,0.7527488855869242,1.4525152431213815
+RQ1,Task=debugging_code,Task=documentation + Task=search_answers,0.26626721328708086,0.5137931034482759,1.4525152431213812
+RQ1,Task=learning_codebase + Task=writing_code,Task=generating_content,0.22979081257226952,0.6544910179640718,1.452338011171499
+RQ1,Task=generating_content,Task=learning_codebase + Task=writing_code,0.22979081257226952,0.509913692558899,1.4523380111714987
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=debugging_code,0.058761694523283926,0.7523553162853297,1.4517558060491564
+RQ1,Task=documentation + Task=generating_content,Task=debugging_code,0.20466729738252917,0.7523183925811437,1.4516845575303083
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=debugging_code,0.2745716388100494,0.7520875323927441,1.4512390863391835
+RQ1,Task=debugging_code,Task=agent_software_engineering + Task=learning_codebase,0.2745716388100494,0.529817444219067,1.4512390863391835
+RQ1,Task=agent_it_operations + Task=writing_code,Task=generating_content,0.0608640807316304,0.6534988713318284,1.4501364037741273
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=testing_code,0.21423315463050563,0.5646993627043503,1.4468044808528102
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=generating_content,0.21423315463050563,0.5488823054134123,1.44680448085281
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=learning_codebase,0.08945653316514243,0.612230215827338,1.446633393732108
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=debugging_code,0.07368863660254389,0.7481323372465315,1.4436070840215527
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=testing_code,0.2501839587932303,0.5633136094674556,1.4432540713342055
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=debugging_code,0.2501839587932303,0.6409911123081066,1.4432540713342052
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=debugging_code,0.23883107326815936,0.7478604344963792,1.4430824165038652
+RQ1,Task=testing_code,Task=learning_codebase,0.23788499947440345,0.6094802046862375,1.4401354165872275
+RQ1,Task=learning_codebase,Task=testing_code,0.23788499947440345,0.5620963735717834,1.4401354165872275
+RQ1,Task=agent_business_process + Task=documentation,Task=debugging_code,0.058761694523283926,0.7463284379172229,1.4401262535307386
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=learning_new_concepts,0.28676547881845893,0.7854880506766484,1.439204126750184
+RQ1,Task=learning_new_concepts,Task=agent_software_engineering + Task=learning_codebase,0.28676547881845893,0.5254237288135593,1.439204126750184
+RQ1,Task=agent_it_operations + Task=search_answers,Task=documentation,0.06244087038789026,0.5852216748768473,1.438928351797221
+RQ1,Task=documentation,Task=debugging_code + Task=writing_code,0.2619573215599706,0.644094081157922,1.4373133929287618
+RQ1,Task=debugging_code + Task=writing_code,Task=documentation,0.2619573215599706,0.5845648604269295,1.4373133929287618
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=debugging_code,0.2501839587932303,0.7437499999999999,1.4351508620689655
+RQ1,Task=learning_codebase,Task=agent_software_engineering + Task=generating_content,0.23042152843477348,0.544461003477397,1.4351503258743359
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=learning_codebase,0.23042152843477348,0.6073704627320587,1.4351503258743357
+RQ1,Task=testing_code,Task=debugging_code + Task=search_answers,0.26006517397245876,0.6663075680043092,1.4350427653214837
+RQ1,Task=debugging_code + Task=search_answers,Task=testing_code,0.26006517397245876,0.5601086710436949,1.4350427653214837
+RQ1,Task=learning_codebase + Task=search_answers,Task=generating_content,0.24534847051403344,0.6463583494876766,1.4342913409555091
+RQ1,Task=generating_content,Task=learning_codebase + Task=search_answers,0.24534847051403344,0.5444366689993002,1.4342913409555091
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=learning_codebase,0.03405865657521287,0.6067415730337079,1.433664327935833
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=documentation,0.08514664143803216,0.5827338129496402,1.432811259392589
+RQ1,Task=learning_codebase,Task=learning_new_concepts,0.3306002312624829,0.7811723795330352,1.4312967732083521
+RQ1,Task=learning_new_concepts,Task=learning_codebase,0.3306002312624829,0.6057395993836672,1.4312967732083521
+RQ1,Task=learning_codebase,Task=debugging_code,0.3135709029748765,0.7409339294585197,1.4297169312249285
+RQ1,Task=debugging_code,Task=learning_codebase,0.3135709029748765,0.6050709939148073,1.4297169312249285
+RQ1,Task=debugging_code,Task=search_answers + Task=writing_code,0.40702196993587725,0.7853955375253551,1.4296723590659592
+RQ1,Task=search_answers + Task=writing_code,Task=debugging_code,0.40702196993587725,0.7409108304630694,1.4296723590659592
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=debugging_code,0.094186902133922,0.740495867768595,1.4288716409903943
+RQ1,Task=agent_it_operations + Task=documentation,Task=debugging_code,0.052139177966992536,0.7402985074626866,1.4284908116617723
+RQ1,Task=debugging_code + Task=generating_content,Task=learning_new_concepts,0.23883107326815936,0.7786154900616861,1.426611933158093
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=generating_content,0.09387154420267003,0.6424460431654677,1.4256097990746663
+RQ1,Task=debugging_code + Task=testing_code,Task=writing_code,0.2597498160412068,0.9091243561442238,1.4250288350634372
+RQ1,Task=agent_it_operations + Task=writing_code,Task=testing_code,0.051718700725323245,0.5553047404063205,1.4227347146472735
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=generating_content,0.23883107326815936,0.6407219402143259,1.4217839555070872
+RQ1,Task=generating_content,Task=debugging_code + Task=learning_new_concepts,0.23883107326815936,0.529974341031024,1.4217839555070872
+RQ1,Task=debugging_code + Task=documentation,Task=writing_code,0.2619573215599706,0.9065114587122591,1.4209331861475896
+RQ1,Task=agent_it_operations + Task=writing_code,Task=debugging_code,0.06853779039209502,0.7358916478555304,1.419987271003988
+RQ1,Task=debugging_code + Task=learning_codebase,Task=writing_code,0.28319142226426997,0.903117666778411,1.4156135053654677
+RQ1,Task=testing_code,Task=generating_content,0.24881740775780511,0.6374899003501212,1.4146119482226973
+RQ1,Task=generating_content,Task=testing_code,0.24881740775780511,0.5521343596920925,1.4146119482226973
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=generating_content,0.21423315463050563,0.636875,1.4132474632610217
+RQ1,Task=agent_business_process + Task=debugging_code,Task=learning_new_concepts,0.0648586145274887,0.77125,1.4131165735747304
+RQ1,Task=testing_code,Task=debugging_code,0.2857142857142857,0.7320226232157284,1.412521544554001
+RQ1,Task=debugging_code,Task=testing_code,0.2857142857142857,0.5513184584178499,1.412521544554001
+RQ1,Task=debugging_code + Task=documentation,Task=learning_new_concepts,0.22274781877430885,0.7708257548199345,1.412339253775431
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=testing_code,0.06506885314832335,0.5512021371326804,1.4122235202109314
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=learning_new_concepts,0.08325449385052035,0.7696793002915453,1.4102386717398825
+RQ1,Task=documentation,Task=debugging_code + Task=search_answers,0.26626721328708086,0.654691134660119,1.4100241711618093
+RQ1,Task=debugging_code + Task=search_answers,Task=documentation,0.26626721328708086,0.5734661534978492,1.4100241711618091
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=testing_code,0.035214968989803426,0.5500821018062397,1.4093539010187877
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=documentation,0.03216650898770104,0.5730337078651686,1.4089608847044064
+RQ1,Task=agent_data_analytics + Task=documentation,Task=debugging_code,0.07053505729002418,0.7301414581066377,1.4088916208860942
+RQ1,Task=generating_content + Task=search_answers,Task=debugging_code,0.28277094502260064,0.7295904529427718,1.4078283932747644
+RQ1,Task=debugging_code,Task=generating_content + Task=search_answers,0.28277094502260064,0.5456389452332657,1.4078283932747644
+RQ1,Task=testing_code,Task=learning_new_concepts + Task=writing_code,0.239041311888994,0.6124427686506867,1.4072869705734257
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=testing_code,0.239041311888994,0.5492753623188406,1.4072869705734257
+RQ1,Task=agent_it_operations + Task=documentation,Task=learning_new_concepts,0.054031325554504364,0.7671641791044777,1.4056303612906194
+RQ1,Task=documentation,Task=learning_new_concepts + Task=writing_code,0.2487122884473878,0.6115275264926338,1.4051839032667692
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=documentation,0.2487122884473878,0.5714975845410628,1.4051839032667692
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=learning_new_concepts,0.060443603489961105,0.7666666666666667,1.4047187981510016
+RQ1,Task=debugging_code + Task=generating_content,Task=writing_code,0.2748869967413014,0.8961617546264566,1.4047102935840305
+RQ1,Task=generating_content + Task=search_answers,Task=learning_new_concepts,0.29706717123935666,0.7664768104149715,1.4043709355696503
+RQ1,Task=learning_new_concepts,Task=generating_content + Task=search_answers,0.29706717123935666,0.5442989214175654,1.40437093556965
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=learning_codebase,0.06328182487122884,0.5942744323790721,1.404205830904648
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=debugging_code,0.0532954903815831,0.727403156384505,1.4036077538916423
+RQ1,Task=learning_codebase,Task=generating_content,0.26721328708083675,0.6313959264778937,1.4010892112396087
+RQ1,Task=generating_content,Task=learning_codebase,0.26721328708083675,0.5929554466993235,1.4010892112396087
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=generating_content,0.23042152843477348,0.6311546213648144,1.4005537469194027
+RQ1,Task=generating_content,Task=agent_software_engineering + Task=learning_codebase,0.23042152843477348,0.5113132726848613,1.4005537469194027
+RQ1,Task=learning_codebase + Task=testing_code,Task=writing_code,0.21255124566382844,0.8935041979673,1.400544642488536
+RQ1,Task=documentation + Task=search_answers,Task=learning_new_concepts,0.27036686639335644,0.7643387815750371,1.400453549522983
+RQ1,Task=documentation + Task=generating_content,Task=learning_new_concepts,0.20782087669504887,0.7639103554868624,1.3996685692886213
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=debugging_code,0.0648586145274887,0.7241784037558685,1.3973852241236464
+RQ1,Task=agent_business_process + Task=documentation,Task=learning_new_concepts,0.060023126248291814,0.7623497997329773,1.3968092536324757
+RQ1,Task=agent_it_operations + Task=generating_content,Task=debugging_code,0.05476716072742563,0.7236111111111111,1.3962905679513185
+RQ1,Task=agent_it_operations + Task=search_answers,Task=generating_content,0.0670661200462525,0.6285714285714286,1.3948215535339399
+RQ1,Task=agent_software_engineering + Task=documentation,Task=debugging_code,0.2510249132765689,0.7223230490018148,1.3938051044937656
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=testing_code,0.05792074003994534,0.543928923988154,1.3935889722325097
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=writing_code,0.3313360664354042,0.888888888888889,1.3933102652825837
+RQ1,Task=writing_code,Task=debugging_code + Task=learning_new_concepts,0.3313360664354042,0.5193606854506508,1.3933102652825835
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=learning_codebase,0.037737832439819194,0.5894909688013137,1.3929030268770237
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=testing_code,0.046988331756543676,0.543134872417983,1.3915545492357317
+RQ1,Task=generating_content + Task=testing_code,Task=learning_new_concepts,0.1887942815095133,0.7587663709336713,1.3902435452026223
+RQ1,Task=documentation,Task=agent_software_engineering + Task=debugging_code,0.2510249132765689,0.6172137503230809,1.3897170193665014
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=documentation,0.2510249132765689,0.565207100591716,1.3897170193665014
+RQ1,Task=agent_business_process + Task=search_answers,Task=learning_new_concepts,0.08167770419426049,0.7573099415204678,1.3875750141918741
+RQ1,Task=agent_it_operations + Task=generating_content,Task=learning_new_concepts,0.0572900241774414,0.7569444444444444,1.3869053351309706
+RQ1,Task=agent_data_analytics + Task=documentation,Task=learning_new_concepts,0.07305792074003994,0.7562568008705114,1.3856454057552339
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=writing_code,0.239041311888994,0.8834498834498833,1.3847847654076024
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=learning_new_concepts,0.08146746557342584,0.7546251217137293,1.3826557748194737
+RQ1,Task=agent_business_process + Task=testing_code,Task=learning_new_concepts,0.053610848312835066,0.7544378698224852,1.382312684056491
+RQ1,Task=debugging_code + Task=search_answers,Task=learning_new_concepts,0.3502575423105224,0.7543581616481774,1.3821666393989043
+RQ1,Task=learning_new_concepts,Task=debugging_code + Task=search_answers,0.3502575423105224,0.6417565485362094,1.3821666393989043
+RQ1,Task=search_answers + Task=writing_code,Task=learning_codebase,0.3212446126353411,0.5847684653654803,1.381744265032741
+RQ1,Task=learning_codebase,Task=search_answers + Task=writing_code,0.3212446126353411,0.7590660705414803,1.3817442650327407
+RQ1,Task=generating_content + Task=writing_code,Task=learning_new_concepts,0.27078734363502577,0.7540983606557377,1.3816906211321325
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=generating_content,0.27078734363502577,0.6222222222222222,1.380732446932587
+RQ1,Task=generating_content,Task=learning_new_concepts + Task=writing_code,0.27078734363502577,0.6008864007464428,1.380732446932587
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=generating_content,0.03489961105855146,0.6217228464419476,1.3796243149527054
+RQ1,Task=generating_content + Task=testing_code,Task=writing_code,0.21864816566803322,0.8787494719053655,1.3774169922945694
+RQ1,Task=debugging_code + Task=testing_code,Task=learning_new_concepts,0.21465363187217493,0.7512877115526123,1.3765408320493069
+RQ1,Task=agent_business_process,Task=documentation,0.07873436350257543,0.5597907324364724,1.3763993894205637
+RQ1,Task=agent_business_process + Task=writing_code,Task=learning_new_concepts,0.07221696625670136,0.7508196721311476,1.3756832706054714
+RQ1,Task=debugging_code + Task=search_answers,Task=writing_code,0.40702196993587725,0.876613085804845,1.3740682625245493
+RQ1,Task=writing_code,Task=debugging_code + Task=search_answers,0.40702196993587725,0.6379963750205965,1.3740682625245493
+RQ1,Task=debugging_code,Task=agent_software_engineering + Task=writing_code,0.387785136129507,0.7482758620689656,1.3723439899483458
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=debugging_code,0.387785136129507,0.7112010796221322,1.3723439899483456
+RQ1,Task=documentation + Task=writing_code,Task=learning_new_concepts,0.2487122884473878,0.7489711934156379,1.3722964104320037
+RQ1,Task=documentation,Task=debugging_code,0.28897298433722274,0.7105195140863272,1.371028831136558
+RQ1,Task=debugging_code,Task=documentation,0.28897298433722274,0.5576064908722109,1.371028831136558
+RQ1,Task=documentation + Task=testing_code,Task=writing_code,0.21780721118469462,0.8731563421828908,1.3686499066050157
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=writing_code,0.387785136129507,0.8731360946745562,1.3686181691611554
+RQ1,Task=writing_code,Task=agent_software_engineering + Task=debugging_code,0.387785136129507,0.6078431372549019,1.3686181691611554
+RQ1,Task=testing_code,Task=search_answers + Task=writing_code,0.29338799537475035,0.7516832749798007,1.3683052037663308
+RQ1,Task=search_answers + Task=writing_code,Task=testing_code,0.29338799537475035,0.5340604668962878,1.3683052037663308
+RQ1,Task=agent_business_process + Task=debugging_code,Task=writing_code,0.07337327867129191,0.8724999999999999,1.3676211072664357
+RQ1,Task=search_answers + Task=testing_code,Task=writing_code,0.29338799537475035,0.8721875,1.3671312716262976
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=debugging_code,0.3502575423105224,0.7084839464171805,1.3671009700338008
+RQ1,Task=debugging_code,Task=learning_new_concepts + Task=search_answers,0.3502575423105224,0.6758620689655173,1.3671009700338008
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=generating_content,0.06559444970040997,0.6159921026653504,1.3669075980068763
+RQ1,Task=documentation + Task=learning_codebase,Task=writing_code,0.22621675601808053,0.8719611021069692,1.3667763988043495
+RQ1,Task=agent_business_process + Task=generating_content,Task=learning_new_concepts,0.06181015452538632,0.7452471482889734,1.365473058873845
+RQ1,Task=documentation + Task=testing_code,Task=learning_new_concepts,0.18585094081782824,0.7450484618626212,1.3651090172764089
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=writing_code,0.094186902133922,0.8707482993197279,1.3648753619094696
+RQ1,Task=agent_business_process + Task=generating_content,Task=debugging_code,0.0586565752128666,0.7072243346007605,1.3646704046768834
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=learning_new_concepts,0.06506885314832335,0.7439903846153847,1.3631703637993364
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=writing_code,0.06853779039209502,0.8693333333333333,1.3626574394463666
+RQ1,Task=debugging_code + Task=writing_code,Task=generating_content,0.2748869967413014,0.6134177809054657,1.3611950897489375
+RQ1,Task=generating_content,Task=debugging_code + Task=writing_code,0.2748869967413014,0.6099836715651972,1.3611950897489375
+RQ1,Task=search_answers + Task=testing_code,Task=learning_new_concepts,0.24986860086197835,0.7428125,1.3610121942411402
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=debugging_code,0.08325449385052035,0.7052537845057881,1.3608680024347997
+RQ1,Task=agent_it_operations + Task=search_answers,Task=testing_code,0.05665930831493746,0.5310344827586208,1.3605523928044059
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=learning_new_concepts,0.10827288972984338,0.7410071942446044,1.3577044373745997
+RQ1,Task=agent_it_operations + Task=writing_code,Task=learning_new_concepts,0.06895826763376432,0.7404063205417607,1.356603491393253
+RQ1,Task=agent_it_operations + Task=testing_code,Task=learning_new_concepts,0.046988331756543676,0.740066225165563,1.3559803543913715
+RQ1,Task=debugging_code,Task=writing_code,0.4481236203090508,0.8647058823529412,1.3554040301241603
+RQ1,Task=writing_code,Task=debugging_code,0.4481236203090508,0.7024221453287197,1.3554040301241603
+RQ1,Task=debugging_code + Task=writing_code,Task=learning_new_concepts,0.3313360664354042,0.7393854093361483,1.3547329350952964
+RQ1,Task=learning_new_concepts,Task=debugging_code + Task=writing_code,0.3313360664354042,0.6070878274268104,1.3547329350952961
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=testing_code,0.2879217912330495,0.5280508964719491,1.3529082084938464
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=writing_code,0.2879217912330495,0.7376784271478588,1.3529082084938462
+RQ1,Task=generating_content,Task=debugging_code + Task=search_answers,0.28277094502260064,0.6274784231397248,1.351415494527553
+RQ1,Task=debugging_code + Task=search_answers,Task=generating_content,0.28277094502260064,0.6090106407063617,1.3514154945275527
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=debugging_code,0.07558078419005572,0.700097370983447,1.3509181115954425
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=learning_new_concepts,0.09366130558183539,0.7363636363636363,1.3491963160106457
+RQ1,Task=agent_it_operations + Task=search_answers,Task=learning_new_concepts,0.07852412488174078,0.7359605911330049,1.3484578396472027
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=debugging_code,0.060443603489961105,0.6986634264884568,1.3481511513559208
+RQ1,Task=generating_content + Task=learning_codebase,Task=writing_code,0.22979081257226952,0.8599527930763179,1.347953686033121
+RQ1,Task=agent_business_process + Task=search_answers,Task=debugging_code,0.07516030694838642,0.6968810916179338,1.344711931959717
+RQ1,Task=documentation,Task=learning_new_concepts + Task=search_answers,0.27036686639335644,0.6647712587231842,1.344667017697991
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=documentation,0.27036686639335644,0.5468849670423134,1.344667017697991
+RQ1,Task=search_answers + Task=writing_code,Task=learning_new_concepts,0.4029223168296016,0.7334481438959052,1.3438544285211376
+RQ1,Task=learning_new_concepts,Task=search_answers + Task=writing_code,0.4029223168296016,0.738251155624037,1.3438544285211373
+RQ1,Task=search_answers + Task=writing_code,Task=documentation,0.30022075055187636,0.5464982778415615,1.3437162360058863
+RQ1,Task=documentation,Task=search_answers + Task=writing_code,0.30022075055187636,0.7381752390798655,1.343716236005886
+RQ1,Task=debugging_code,Task=agent_software_engineering + Task=generating_content,0.26416482707873434,0.50973630831643,1.3436191468590188
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=debugging_code,0.26416482707873434,0.6963147686339706,1.3436191468590186
+RQ1,Task=documentation + Task=learning_new_concepts,Task=writing_code,0.2487122884473878,0.8569358927924666,1.3432247731314442
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=debugging_code,0.3219804478082624,0.6956620486032251,1.342359648755067
+RQ1,Task=debugging_code,Task=agent_software_engineering + Task=learning_new_concepts,0.3219804478082624,0.6212981744421907,1.342359648755067
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=writing_code,0.2879217912330495,0.8559375,1.3416598183391002
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=testing_code,0.07631661936297698,0.5223021582733813,1.3381794860368101
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=documentation,0.08325449385052035,0.54320987654321,1.3356307975072514
+RQ1,Task=testing_code + Task=writing_code,Task=learning_new_concepts,0.239041311888994,0.7279129321382842,1.3337125815546027
+RQ1,Task=generating_content,Task=learning_new_concepts + Task=search_answers,0.29706717123935666,0.6592022393282015,1.333402275723832
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=generating_content,0.29706717123935666,0.6008930469912821,1.3334022757238317
+RQ1,Task=documentation,Task=agent_software_engineering + Task=learning_new_concepts,0.25081467465573426,0.6166968208839493,1.3324180915441766
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=documentation,0.25081467465573426,0.5419032477856007,1.3324180915441766
+RQ1,Task=learning_codebase,Task=agent_software_engineering + Task=writing_code,0.30715862503941976,0.7257824143070045,1.3310908246197288
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=learning_codebase,0.30715862503941976,0.5633314054366686,1.3310908246197288
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=writing_code,0.2806685588142542,0.848966613672496,1.3307331349260922
+RQ1,Task=documentation + Task=search_answers,Task=writing_code,0.30022075055187636,0.8487369985141158,1.3303732191242021
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=writing_code,0.27078734363502577,0.8479262672811061,1.3291024189561973
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=learning_new_concepts,0.3219804478082624,0.7249704142011835,1.3283211768674612
+RQ1,Task=learning_new_concepts,Task=agent_software_engineering + Task=debugging_code,0.3219804478082624,0.5899460708782743,1.3283211768674612
+RQ1,Task=learning_codebase + Task=search_answers,Task=writing_code,0.3212446126353411,0.8463029631680975,1.3265579318863256
+RQ1,Task=writing_code,Task=learning_codebase + Task=search_answers,0.3212446126353411,0.5035425935079914,1.3265579318863256
+RQ1,Task=documentation + Task=generating_content,Task=writing_code,0.22958057395143489,0.8438948995363216,1.3227833546365177
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=learning_codebase,0.08577735730053611,0.5596707818930041,1.322441169435705
+RQ1,Task=agent_software_engineering + Task=documentation,Task=learning_new_concepts,0.25081467465573426,0.7217180883242589,1.3223621290887277
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=search_answers,0.3502575423105224,0.9396503102086857,1.322125928267302
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=generating_content,0.26416482707873434,0.594792899408284,1.3198658390648486
+RQ1,Task=generating_content,Task=agent_software_engineering + Task=debugging_code,0.26416482707873434,0.5861908094238395,1.3198658390648486
+RQ1,Task=testing_code,Task=writing_code,0.32839272574371914,0.841368165903582,1.3188227652398707
+RQ1,Task=writing_code,Task=testing_code,0.32839272574371914,0.5147470753007085,1.3188227652398707
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=writing_code,0.30715862503941976,0.8413475381514541,1.3187904317737325
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=learning_new_concepts,0.2729948491537896,0.7195899141036299,1.3184627990885653
+RQ1,Task=learning_new_concepts,Task=agent_software_engineering + Task=generating_content,0.2729948491537896,0.5001926040061634,1.3184627990885653
+RQ1,Task=debugging_code,Task=learning_new_concepts,0.3727530747398297,0.7192697768762678,1.317876230243439
+RQ1,Task=learning_new_concepts,Task=debugging_code,0.3727530747398297,0.6829738058551618,1.317876230243439
+RQ1,Task=agent_business_process + Task=testing_code,Task=writing_code,0.05970776831703984,0.8402366863905325,1.3170492004668208
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=generating_content,0.09092820351098496,0.593278463648834,1.3165052541850613
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=writing_code,0.07337327867129191,0.8389423076923076,1.315020295448496
+RQ1,Task=generating_content,Task=debugging_code,0.30673814779775044,0.6806624679262888,1.3134162388200377
+RQ1,Task=debugging_code,Task=generating_content,0.30673814779775044,0.5918864097363083,1.3134162388200377
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=writing_code,0.08251865867759907,0.8377801494130203,1.31319864250553
+RQ1,Task=agent_business_process,Task=learning_codebase,0.07810364764007148,0.5553064275037369,1.3121286748244039
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=debugging_code,0.09933774834437085,0.6798561151079137,1.3118602886453514
+RQ1,Task=documentation + Task=learning_new_concepts,Task=search_answers,0.27036686639335644,0.9315465411082942,1.3107235979238578
+RQ1,Task=agent_software_engineering + Task=documentation,Task=writing_code,0.2904446546830653,0.8357531760435571,1.3100214143520117
+RQ1,Task=documentation,Task=agent_software_engineering + Task=writing_code,0.2904446546830653,0.7141380201602482,1.3097349114679855
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=documentation,0.2904446546830653,0.5326778484673221,1.3097349114679853
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=search_answers,0.3076842215915064,0.930683624801272,1.3095094398364888
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=search_answers,0.29706717123935666,0.9302172481895985,1.30885322911221
+RQ1,Task=generating_content,Task=agent_software_engineering + Task=learning_new_concepts,0.2729948491537896,0.6057849311873106,1.3088421645207553
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=generating_content,0.2729948491537896,0.589825119236884,1.308842164520755
+RQ1,Task=agent_business_process,Task=generating_content,0.08293913591926837,0.5896860986547084,1.308533673081932
+RQ1,Task=documentation,Task=learning_new_concepts,0.2902344160622306,0.7136210907211165,1.3075264707299654
+RQ1,Task=learning_new_concepts,Task=documentation,0.2902344160622306,0.5317796610169491,1.3075264707299654
+RQ1,Task=generating_content + Task=search_answers,Task=writing_code,0.32324187953327027,0.8340113913751017,1.3072912120862321
+RQ1,Task=writing_code,Task=generating_content + Task=search_answers,0.32324187953327027,0.5066732575383094,1.307291212086232
+RQ1,Task=debugging_code + Task=learning_codebase,Task=search_answers,0.2912856091664039,0.9289306067717064,1.3070428726844021
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=writing_code,0.06506885314832335,0.8331090174966354,1.3058767644497433
+RQ1,Task=generating_content,Task=search_answers + Task=writing_code,0.32324187953327027,0.7172848145556334,1.3056889477358862
+RQ1,Task=search_answers + Task=writing_code,Task=generating_content,0.32324187953327027,0.5884041331802526,1.3056889477358862
+RQ1,Task=search_answers,Task=learning_new_concepts + Task=writing_code,0.4029223168296016,0.5669279692353203,1.3027018771342034
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=search_answers,0.4029223168296016,0.9258454106280193,1.3027018771342032
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=learning_new_concepts,0.23515189740355302,0.6024777807702666,1.30169682681525
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=testing_code,0.23515189740355302,0.5080626845332727,1.30169682681525
+RQ1,Task=learning_codebase,Task=agent_software_engineering + Task=search_answers,0.3288132029853884,0.7769498261301541,1.3005672525032828
+RQ1,Task=agent_software_engineering + Task=search_answers,Task=learning_codebase,0.3288132029853884,0.5504135139890902,1.3005672525032825
+RQ1,Task=writing_code,Task=learning_codebase,0.351098496793861,0.5503377821716922,1.300388306457851
+RQ1,Task=learning_codebase,Task=writing_code,0.351098496793861,0.8296075509190263,1.3003883064578508
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=documentation,0.05991800693787449,0.5287569573283859,1.300094322839218
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=search_answers,0.24986860086197835,0.9234654234654234,1.2993531390957807
+RQ1,Task=learning_new_concepts,Task=generating_content,0.31935246504782927,0.5851309707241911,1.298425688010084
+RQ1,Task=generating_content,Task=learning_new_concepts,0.31935246504782927,0.708654070445533,1.2984256880100837
+RQ1,Task=agent_business_process,Task=generating_content + Task=search_answers,0.07074529591085882,0.5029895366218236,1.2977866726019547
+RQ1,Task=debugging_code + Task=generating_content,Task=search_answers,0.28277094502260064,0.9218642906100069,1.297100280516639
+RQ1,Task=debugging_code + Task=documentation,Task=search_answers,0.26626721328708086,0.9214259730811205,1.296483550054829
+RQ1,Task=testing_code,Task=learning_new_concepts + Task=search_answers,0.24986860086197835,0.6401831403178023,1.294931365903307
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=testing_code,0.24986860086197835,0.5054220710184988,1.294931365903307
+RQ1,Task=agent_business_process,Task=testing_code,0.0710606538421108,0.5052316890881913,1.294443592323179
+RQ1,Task=debugging_code,Task=agent_software_engineering + Task=search_answers,0.40050457269000317,0.7728194726166329,1.2936532892841859
+RQ1,Task=agent_software_engineering + Task=search_answers,Task=debugging_code,0.40050457269000317,0.6704205525250748,1.2936532892841859
+RQ1,Task=agent_business_process + Task=documentation,Task=writing_code,0.06496373383790602,0.8251001335113484,1.2933230466458159
+RQ1,Task=learning_new_concepts,Task=agent_software_engineering + Task=search_answers,0.42142331546305056,0.7721494607087828,1.292531729671415
+RQ1,Task=agent_software_engineering + Task=search_answers,Task=learning_new_concepts,0.42142331546305056,0.705437269048038,1.292531729671415
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=search_answers,0.09933774834437085,0.9183673469387755,1.2921799395693792
+RQ1,Task=generating_content + Task=learning_codebase,Task=search_answers,0.24534847051403344,0.918174665617624,1.2919088291703087
+RQ1,Task=agent_data_analytics + Task=documentation,Task=writing_code,0.07957531798591401,0.823721436343852,1.2911619746151035
+RQ1,Task=agent_it_operations + Task=search_answers,Task=debugging_code,0.07137601177336277,0.6689655172413793,1.2908456319507589
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=search_answers,0.10827288972984338,0.917186108637578,1.2905178895827956
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=learning_codebase,0.06181015452538632,0.5454545454545454,1.2888497493564557
+RQ1,Task=documentation + Task=learning_codebase,Task=search_answers,0.23756964154315147,0.9157212317666126,1.288456748675608
+RQ1,Task=learning_codebase + Task=writing_code,Task=search_answers,0.3212446126353411,0.9149700598802395,1.2873998195001803
+RQ1,Task=learning_codebase + Task=testing_code,Task=search_answers,0.21696625670135605,0.9120636323464428,1.283310358602531
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=search_answers,0.08167770419426049,0.9119718309859155,1.2831811903814547
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=testing_code,0.07673709660464627,0.5006858710562414,1.2827968465817463
+RQ1,Task=agent_it_operations + Task=documentation,Task=writing_code,0.05760538210869337,0.8179104477611941,1.2820534008159894
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=search_answers,0.42142331546305056,0.9105155575743811,1.2811321548890826
+RQ1,Task=search_answers,Task=agent_software_engineering + Task=learning_new_concepts,0.42142331546305056,0.5929596213577873,1.2811321548890826
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=learning_new_concepts,0.23515189740355302,0.6990624999999999,1.2808516106510013
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=writing_code,0.3099968464206875,0.8171238570241064,1.2808204402488588
+RQ1,Task=debugging_code + Task=testing_code,Task=search_answers,0.26006517397245876,0.9102281089036057,1.2807277030025148
+RQ1,Task=documentation,Task=writing_code,0.33207190160832545,0.8164900491082967,1.2798269627891294
+RQ1,Task=writing_code,Task=documentation,0.33207190160832545,0.5205140879881364,1.2798269627891292
+RQ1,Task=debugging_code + Task=writing_code,Task=search_answers,0.40702196993587725,0.9082805536007507,1.2779874140517589
+RQ1,Task=search_answers,Task=debugging_code + Task=writing_code,0.40702196993587725,0.572696346694276,1.2779874140517589
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=search_answers,0.08945653316514243,0.9082177161152615,1.2778989991723833
+RQ1,Task=writing_code,Task=learning_new_concepts + Task=search_answers,0.4029223168296016,0.6315702751688911,1.277509680561697
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=writing_code,0.4029223168296016,0.8150116946629811,1.2775096805616968
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=search_answers,0.07852412488174078,0.9076549210206561,1.2771071237493719
+RQ1,Task=agent_it_operations + Task=testing_code,Task=writing_code,0.051718700725323245,0.8145695364238411,1.2768166089965398
+RQ1,Task=writing_code,Task=agent_software_engineering + Task=learning_new_concepts,0.37653736991485337,0.5902125556104795,1.2751969206274112
+RQ1,Task=agent_software_engineering + Task=learning_new_concepts,Task=writing_code,0.37653736991485337,0.8135362253009312,1.275196920627411
+RQ1,Task=learning_new_concepts,Task=search_answers,0.4943761168926732,0.9058166409861325,1.2745205895135452
+RQ1,Task=search_answers,Task=learning_new_concepts,0.4943761168926732,0.6956071587043338,1.2745205895135452
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=search_answers,0.07137601177336277,0.9053333333333333,1.27384055613075
+RQ1,Task=documentation + Task=writing_code,Task=search_answers,0.30022075055187636,0.9040835707502374,1.2720820897126177
+RQ1,Task=testing_code,Task=learning_new_concepts,0.27057710501419113,0.6932399676811204,1.2701833229103425
+RQ1,Task=search_answers,Task=agent_software_engineering + Task=debugging_code,0.40050457269000317,0.5635261056056797,1.2688340455921494
+RQ1,Task=agent_software_engineering + Task=debugging_code,Task=search_answers,0.40050457269000317,0.901775147928994,1.2688340455921492
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=search_answers,0.06601492694207926,0.9010043041606887,1.2677494372845188
+RQ1,Task=agent_software_engineering + Task=learning_codebase,Task=search_answers,0.3288132029853884,0.9006622516556292,1.2672681555982845
+RQ1,Task=generating_content + Task=writing_code,Task=search_answers,0.32324187953327027,0.900175644028103,1.2665834790177999
+RQ1,Task=generating_content + Task=testing_code,Task=search_answers,0.2239041311888994,0.899873257287706,1.2661580086640951
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=learning_new_concepts,0.37653736991485337,0.6905725853094274,1.2652960331372465
+RQ1,Task=learning_new_concepts,Task=agent_software_engineering + Task=writing_code,0.37653736991485337,0.6899075500770416,1.2652960331372465
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=search_answers,0.0702196993587722,0.8990578734858681,1.2650107307308185
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=writing_code,0.07221696625670136,0.8063380281690141,1.2639139334275549
+RQ1,Task=documentation + Task=generating_content,Task=search_answers,0.24419215809944286,0.8976043276661515,1.2629655330702707
+RQ1,Task=search_answers,Task=learning_codebase,0.3795858299169557,0.534092589853572,1.2620026843708472
+RQ1,Task=learning_codebase,Task=search_answers,0.3795858299169557,0.8969200198708395,1.262002684370847
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=writing_code,0.058971933144118575,0.8048780487804879,1.2616254536247784
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=generating_content,0.3099968464206875,0.5685367264314632,1.2616024909126453
+RQ1,Task=generating_content,Task=agent_software_engineering + Task=writing_code,0.3099968464206875,0.6878936319104269,1.261602490912645
+RQ1,Task=debugging_code,Task=search_answers,0.46431199411331864,0.8959432048681543,1.2606282662196053
+RQ1,Task=search_answers,Task=debugging_code,0.46431199411331864,0.6533057240053247,1.2606282662196053
+RQ1,Task=documentation + Task=testing_code,Task=search_answers,0.2234836539472301,0.8959123472397809,1.2605848482904949
+RQ1,Task=agent_it_operations + Task=generating_content,Task=writing_code,0.0608640807316304,0.8041666666666667,1.2605103806228373
+RQ1,Task=agent_data_analytics,Task=generating_content,0.1079575317985914,0.5677169707020453,1.259783424839878
+RQ1,Task=documentation,Task=agent_software_engineering + Task=search_answers,0.30579207400399455,0.751873869216852,1.2585916096885295
+RQ1,Task=agent_software_engineering + Task=search_answers,Task=documentation,0.30579207400399455,0.5118775294738694,1.2585916096885292
+RQ1,Task=agent_business_process + Task=debugging_code,Task=search_answers,0.07516030694838642,0.89375,1.2575423384114777
+RQ1,Task=testing_code + Task=writing_code,Task=search_answers,0.29338799537475035,0.8934058898847631,1.2570581615846401
+RQ1,Task=agent_it_operations + Task=testing_code,Task=search_answers,0.05665930831493746,0.892384105960265,1.2556204703446237
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=search_answers,0.11342373594029223,0.8917355371900826,1.2547079078966508
+RQ1,Task=testing_code,Task=agent_software_engineering + Task=search_answers,0.2924419215809944,0.7492593590088876,1.254215076940269
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=learning_new_concepts,0.043729633133606644,0.6830870279146142,1.2515806811540302
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=writing_code,0.0861978345422054,0.7984420642648491,1.2515372149203343
+RQ1,Task=learning_new_concepts,Task=writing_code,0.43519394512771997,0.7973805855161787,1.24987337452882
+RQ1,Task=writing_code,Task=learning_new_concepts,0.43519394512771997,0.6821552150271873,1.24987337452882
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=writing_code,0.06895826763376432,0.7970838396111786,1.2494082330237504
+RQ1,Task=agent_data_analytics,Task=documentation,0.09660464627352044,0.5080154781647319,1.2490956949550516
+RQ1,Task=generating_content,Task=writing_code,0.35908756438557765,0.7968276183811525,1.2490066128950243
+RQ1,Task=writing_code,Task=generating_content,0.35908756438557765,0.5628604382929643,1.2490066128950243
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=learning_new_concepts,0.07253232418795333,0.6811451135241856,1.248022624221028
+RQ1,Task=agent_business_process + Task=generating_content,Task=writing_code,0.06601492694207926,0.7959442332065907,1.2476219295591195
+RQ1,Task=agent_it_operations + Task=documentation,Task=search_answers,0.06244087038789026,0.8865671641791045,1.24743579837832
+RQ1,Task=agent_it_operations + Task=generating_content,Task=search_answers,0.0670661200462525,0.8861111111111111,1.2467941132968496
+RQ1,Task=agent_it_operations + Task=writing_code,Task=search_answers,0.08251865867759907,0.8860045146726861,1.2466441278037663
+RQ1,Task=agent_software_engineering + Task=search_answers,Task=writing_code,0.4739829706717124,0.7934189688544783,1.2436636432217254
+RQ1,Task=writing_code,Task=agent_software_engineering + Task=search_answers,0.4739829706717124,0.7429560059317845,1.2436636432217254
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=writing_code,0.09366130558183539,0.7934105075690117,1.24365038037634
+RQ1,Task=agent_data_analytics + Task=documentation,Task=search_answers,0.08514664143803216,0.8813928182807399,1.2401552847662594
+RQ1,Task=agent_software_engineering + Task=documentation,Task=search_answers,0.30579207400399455,0.8799153055051422,1.2380763646310335
+RQ1,Task=agent_it_operations,Task=documentation,0.07042993797960685,0.503003003003003,1.236771146954657
+RQ1,Task=agent_it_operations,Task=learning_codebase,0.0732681593608746,0.5232732732732733,1.2364378163558494
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=debugging_code,0.06822243246084306,0.6406712734452122,1.2362486458994533
+RQ1,Task=agent_business_process + Task=testing_code,Task=search_answers,0.06233575107747293,0.8772189349112426,1.2342824623296333
+RQ1,Task=agent_business_process + Task=writing_code,Task=search_answers,0.08430568695469358,0.8765027322404372,1.2332747362525187
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=generating_content,0.06296646693997687,0.5556586270871985,1.2330255468813902
+RQ1,Task=agent_business_process + Task=agent_it_operations,Task=learning_new_concepts,0.03132555450436245,0.672686230248307,1.2325239037658213
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=search_answers,0.07631661936297698,0.8725961538461539,1.2277780227094308
+RQ1,Task=agent_business_process + Task=search_answers,Task=writing_code,0.08430568695469358,0.7816764132553606,1.2252574920577106
+RQ1,Task=generating_content,Task=agent_software_engineering + Task=search_answers,0.329654157468727,0.7315138791695825,1.2245102116030686
+RQ1,Task=agent_software_engineering + Task=search_answers,Task=generating_content,0.329654157468727,0.5518212211859933,1.2245102116030684
+RQ1,Task=agent_data_analytics,Task=learning_codebase,0.09849679386103227,0.5179657269209508,1.2238966617483866
+RQ1,Task=documentation,Task=search_answers,0.35372647955429415,0.8697337813388473,1.2237505490129352
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=search_answers,0.09387154420267003,0.8695228821811101,1.2234538053821773
+RQ1,Task=agent_software_engineering + Task=testing_code,Task=search_answers,0.2924419215809944,0.869375,1.2232457291820737
+RQ1,Task=agent_software_engineering + Task=writing_code,Task=search_answers,0.4739829706717124,0.8692886061307115,1.2231241695195176
+RQ1,Task=search_answers,Task=agent_software_engineering + Task=writing_code,0.4739829706717124,0.6669131785238871,1.2231241695195176
+RQ1,Task=agent_software_engineering + Task=generating_content,Task=search_answers,0.329654157468727,0.8689387642006097,1.2226319277977222
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=debugging_code,0.04047093451066961,0.6321839080459771,1.2198713016716796
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=learning_new_concepts,0.0373173551981499,0.6647940074906368,1.2180634424611763
+RQ1,Task=agent_business_process + Task=documentation,Task=search_answers,0.06811731315042574,0.8651535380507344,1.2173059617625552
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=writing_code,0.11342373594029223,0.7762589928057554,1.2167658260934504
+RQ1,Task=testing_code,Task=search_answers,0.3363817933354357,0.8618367896579585,1.212639162848123
+RQ1,Task=agent_it_operations + Task=search_answers,Task=writing_code,0.08251865867759907,0.7733990147783251,1.2122828847563365
+RQ1,Task=writing_code,Task=search_answers,0.5493535162409334,0.8610973801285219,1.2115987837838529
+RQ1,Task=search_answers,Task=writing_code,0.5493535162409334,0.772962579500074,1.2115987837838529
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=learning_new_concepts,0.10122989593188268,0.6604938271604938,1.210184471837014
+RQ1,Task=search_answers,Task=generating_content,0.38757489750867236,0.5453335305428192,1.2101138036048145
+RQ1,Task=generating_content,Task=search_answers,0.38757489750867236,0.8600419874037789,1.2101138036048142
+RQ1,Task=agent_business_process + Task=generating_content,Task=search_answers,0.07074529591085882,0.85297845373891,1.2001751265224452
+RQ1,Task=agent_it_operations,Task=generating_content,0.07568590350047304,0.5405405405405406,1.1994779944395062
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=debugging_code,0.09397666351308735,0.6131687242798354,1.1831793253699947
+RQ1,Task=agent_business_process,Task=learning_new_concepts + Task=writing_code,0.07221696625670136,0.5134529147982063,1.1798255020471828
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=learning_new_concepts,0.0728476821192053,0.6428571428571428,1.1778697996918335
+RQ1,Task=agent_business_process,Task=learning_new_concepts + Task=search_answers,0.08167770419426049,0.5807174887892377,1.1746471339255833
+RQ1,Task=agent_business_process,Task=learning_new_concepts,0.08956165247555976,0.6367713004484304,1.1667190641690908
+RQ1,Task=agent_business_process,Task=debugging_code + Task=writing_code,0.07337327867129191,0.5216741405082211,1.1641299785725328
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=debugging_code,0.033743298643960896,0.601123595505618,1.1599368689746337
+RQ1,Task=agent_business_process,Task=debugging_code,0.08409544833385893,0.5979073243647234,1.1537307052092522
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=debugging_code,0.06769683590875644,0.5974025974025974,1.152756776691868
+RQ1,Task=agent_data_analytics,Task=learning_new_concepts + Task=search_answers,0.10827288972984338,0.5693753454947484,1.1517047972977976
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=writing_code,0.07820876695048881,0.7344521224086872,1.15123464169943
+RQ1,Task=agent_business_process,Task=debugging_code + Task=search_answers,0.07516030694838642,0.5343796711509716,1.1509064549828374
+RQ1,Task=agent_data_analytics,Task=agent_software_engineering + Task=learning_new_concepts,0.10122989593188268,0.5323383084577114,1.150155423201955
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=search_answers,0.05192893934615789,0.8111658456486043,1.1413430986030428
+RQ1,Task=agent_data_analytics,Task=learning_new_concepts,0.11804898559865447,0.6207849640685461,1.1374282286564097
+RQ1,Task=agent_business_process + Task=agent_it_operations,Task=writing_code,0.033743298643960896,0.7246049661399548,1.1357994797972302
+RQ1,Task=agent_it_operations,Task=learning_new_concepts + Task=search_answers,0.07852412488174078,0.5608108108108109,1.1343808724735793
+RQ1,Task=agent_it_operations,Task=learning_new_concepts,0.08651319247345737,0.617867867867868,1.1320834027401825
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=writing_code,0.04614737727320509,0.7208538587848933,1.129919716365248
+RQ1,Task=agent_data_analytics,Task=debugging_code + Task=search_answers,0.09933774834437085,0.5223880597014925,1.1250798306407739
+RQ1,Task=agent_business_process + Task=agent_software_engineering,Task=search_answers,0.08514664143803216,0.7996051332675221,1.1250767094769913
+RQ1,Task=agent_it_operations,Task=agent_software_engineering + Task=learning_new_concepts,0.0728476821192053,0.5202702702702703,1.1240815537317923
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=search_answers,0.12235887732576474,0.7983539094650205,1.1233161870641533
+RQ1,Task=agent_data_analytics + Task=agent_software_engineering,Task=writing_code,0.1097445600756859,0.7160493827160493,1.12238882481097
+RQ1,Task=agent_business_process + Task=agent_it_operations,Task=search_answers,0.037107116577315254,0.7968397291196389,1.121185674177655
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=search_answers,0.04467570692736256,0.7958801498127341,1.1198355073463304
+RQ1,Task=agent_business_process,Task=agent_software_engineering + Task=learning_new_concepts,0.07253232418795333,0.5156950672645739,1.1141964966813291
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=search_answers,0.08945653316514243,0.7894248608534322,1.1107526551247895
+RQ1,Task=agent_it_operations,Task=debugging_code + Task=search_answers,0.07137601177336277,0.5097597597597598,1.0978819548550136
+RQ1,Task=agent_data_analytics,Task=debugging_code,0.10816777041942605,0.5688225538971807,1.097608307347643
+RQ1,Task=agent_business_process,Task=search_answers + Task=writing_code,0.08430568695469358,0.5994020926756353,1.0911044982057632
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=writing_code,0.03899926416482708,0.6947565543071161,1.0890128688620193
+RQ1,Task=agent_data_analytics + Task=testing_code,Task=agent_software_engineering,0.07673709660464627,0.8774038461538461,1.0865325160715358
+RQ1,Task=agent_it_operations,Task=debugging_code,0.07883948281299274,0.5630630630630631,1.0864947097198618
+RQ1,Task=agent_it_operations + Task=agent_software_engineering,Task=writing_code,0.07852412488174078,0.6929499072356216,1.0861809964627562
+RQ1,Task=agent_data_analytics,Task=search_answers + Task=writing_code,0.11342373594029223,0.5964621337755666,1.0857528279002995
+RQ1,Task=testing_code + Task=writing_code,Task=agent_software_engineering,0.2879217912330495,0.8767605633802816,1.0857359072424653
+RQ1,Task=debugging_code + Task=testing_code,Task=agent_software_engineering,0.2501839587932303,0.8756438557763061,1.084353033064306
+RQ1,Task=debugging_code + Task=learning_codebase,Task=agent_software_engineering,0.2745716388100494,0.8756285618504861,1.084334093840624
+RQ1,Task=learning_codebase + Task=testing_code,Task=agent_software_engineering,0.20824135393671817,0.8753866548828988,1.0840345284953157
+RQ1,Task=learning_codebase + Task=writing_code,Task=agent_software_engineering,0.30715862503941976,0.8748502994011977,1.0833703330127042
+RQ1,Task=documentation + Task=writing_code,Task=agent_software_engineering,0.2904446546830653,0.8746438746438747,1.083114707040768
+RQ1,Task=agent_data_analytics,Task=search_answers,0.1461158414800799,0.7683803206191265,1.0811421372651606
+RQ1,Task=documentation + Task=testing_code,Task=agent_software_engineering,0.21749185325344267,0.8718921196797303,1.0797070729644982
+RQ1,Task=agent_business_process,Task=search_answers,0.10785241248817408,0.7668161434977578,1.0789412768960467
+RQ1,Task=agent_data_analytics + Task=learning_codebase,Task=agent_software_engineering,0.08577735730053611,0.8708644610458911,1.0784344725240251
+RQ1,Task=documentation + Task=learning_codebase,Task=agent_software_engineering,0.22590139808682855,0.8707455429497568,1.0782872103724337
+RQ1,Task=agent_data_analytics,Task=agent_software_engineering + Task=search_answers,0.12235887732576474,0.6434494195688225,1.0770956059050165
+RQ1,Task=search_answers + Task=testing_code,Task=agent_software_engineering,0.2924419215809944,0.869375,1.0765899993491277
+RQ1,Task=learning_new_concepts + Task=testing_code,Task=agent_software_engineering,0.23515189740355302,0.869075369075369,1.0762189515769311
+RQ1,Task=agent_data_analytics + Task=debugging_code,Task=agent_software_engineering,0.09397666351308735,0.8688046647230321,1.075883725007837
+RQ1,Task=debugging_code + Task=documentation,Task=agent_software_engineering,0.2510249132765689,0.868679519825391,1.0757287519004093
+RQ1,Task=learning_codebase + Task=learning_new_concepts,Task=agent_software_engineering,0.28676547881845893,0.8674085850556439,1.074154890605876
+RQ1,Task=agent_data_analytics + Task=agent_it_operations,Task=agent_software_engineering,0.048670240723220855,0.8670411985018727,1.073699937691788
+RQ1,Task=agent_it_operations,Task=search_answers + Task=writing_code,0.08251865867759907,0.5893393393393394,1.0727870522646643
+RQ1,Task=learning_codebase + Task=search_answers,Task=agent_software_engineering,0.3288132029853884,0.8662420382165605,1.0727102980414136
+RQ1,Task=agent_it_operations,Task=search_answers,0.10669610007358352,0.7620120120120121,1.0721816699112958
+RQ1,Task=agent_business_process,Task=writing_code,0.09618416903185115,0.6838565022421524,1.0719273201235122
+RQ1,Task=debugging_code + Task=writing_code,Task=agent_software_engineering,0.387785136129507,0.8653530377668308,1.071609404878399
+RQ1,Task=learning_new_concepts + Task=writing_code,Task=agent_software_engineering,0.37653736991485337,0.8652173913043478,1.0714414271645745
+RQ1,Task=documentation + Task=search_answers,Task=agent_software_engineering,0.30579207400399455,0.8644873699851412,1.0705374057105763
+RQ1,Task=documentation + Task=learning_new_concepts,Task=agent_software_engineering,0.25081467465573426,0.8641796450561392,1.070156334733019
+RQ1,Task=debugging_code + Task=learning_new_concepts,Task=agent_software_engineering,0.3219804478082624,0.8637901861252115,1.0696740485041834
+RQ1,Task=agent_it_operations,Task=agent_software_engineering + Task=search_answers,0.08945653316514243,0.638888888888889,1.0694615519971846
+RQ1,Task=generating_content + Task=writing_code,Task=agent_software_engineering,0.3099968464206875,0.8632903981264637,1.0690551363417142
+RQ1,Task=agent_data_analytics + Task=writing_code,Task=agent_software_engineering,0.1097445600756859,0.8628099173553718,1.0684601332728003
+RQ1,Task=search_answers + Task=writing_code,Task=agent_software_engineering,0.4739829706717124,0.8628013777267509,1.0684495582289224
+RQ1,Task=agent_software_engineering,Task=search_answers + Task=writing_code,0.4739829706717124,0.5869565217391304,1.0684495582289222
+RQ1,Task=learning_codebase,Task=agent_software_engineering,0.36507936507936506,0.8626428216592151,1.0682532104196971
+RQ1,Task=debugging_code + Task=search_answers,Task=agent_software_engineering,0.40050457269000317,0.8625764093275979,1.0681709687494714
+RQ1,Task=generating_content + Task=learning_codebase,Task=agent_software_engineering,0.23042152843477348,0.862313139260425,1.0678449484228616
+RQ1,Task=testing_code,Task=agent_software_engineering,0.3363817933354357,0.8618367896579585,1.0672550611840874
+RQ1,Task=agent_data_analytics + Task=documentation,Task=agent_software_engineering,0.08325449385052035,0.8618063112078347,1.0672173182140239
+RQ1,Task=debugging_code + Task=generating_content,Task=agent_software_engineering,0.26416482707873434,0.8612063056888279,1.0664743017466571
+RQ1,Task=generating_content + Task=testing_code,Task=agent_software_engineering,0.21423315463050563,0.8610054921841994,1.066225624466062
+RQ1,Task=agent_it_operations + Task=debugging_code,Task=agent_software_engineering,0.06769683590875644,0.8586666666666667,1.0633293413173652
+RQ1,Task=agent_it_operations + Task=testing_code,Task=agent_software_engineering,0.054451802796173655,0.8576158940397351,1.062028117677688
+RQ1,Task=agent_data_analytics + Task=learning_new_concepts,Task=agent_software_engineering,0.10122989593188268,0.8575244879786287,1.061914925037841
+RQ1,Task=debugging_code,Task=agent_software_engineering,0.4441290865131925,0.8569979716024342,1.0612629138055136
+RQ1,Task=agent_software_engineering,Task=debugging_code,0.4441290865131925,0.5499869825566259,1.0612629138055136
+RQ1,Task=generating_content + Task=learning_new_concepts,Task=agent_software_engineering,0.2729948491537896,0.8548387096774195,1.058588993121751
+RQ1,Task=documentation + Task=generating_content,Task=agent_software_engineering,0.23252391464311994,0.8547140649149922,1.0584346393564594
+RQ1,Task=agent_data_analytics,Task=agent_software_engineering + Task=writing_code,0.1097445600756859,0.5771144278606966,1.0584325336878362
+RQ1,Task=writing_code,Task=agent_software_engineering,0.5452538631346578,0.8546712802768166,1.058381657025951
+RQ1,Task=agent_software_engineering,Task=writing_code,0.5452538631346578,0.675214787815673,1.058381657025951
+RQ1,Task=documentation,Task=agent_software_engineering,0.34752444023967205,0.8544843628844663,1.0581501879874937
+RQ1,Task=learning_new_concepts + Task=search_answers,Task=agent_software_engineering,0.42142331546305056,0.852434616202424,1.0556118854378624
+RQ1,Task=agent_software_engineering,Task=learning_new_concepts + Task=search_answers,0.42142331546305056,0.5218693048685238,1.0556118854378624
+RQ1,Task=agent_it_operations + Task=documentation,Task=agent_software_engineering,0.05991800693787449,0.8507462686567164,1.0535211212876
+RQ1,Task=generating_content + Task=search_answers,Task=agent_software_engineering,0.329654157468727,0.85055600759425,1.0532855116173
+RQ1,Task=learning_new_concepts,Task=agent_software_engineering,0.4628403237674761,0.8480354391371341,1.0501641672105644
+RQ1,Task=agent_software_engineering,Task=learning_new_concepts,0.4628403237674761,0.5731580317625617,1.0501641672105644
+RQ1,Task=agent_data_analytics,Task=writing_code,0.12719436560496164,0.6688778330569376,1.0484486448954766
+RQ1,Task=agent_it_operations + Task=learning_codebase,Task=agent_software_engineering,0.06181015452538632,0.8436154949784792,1.0446907320659038
+RQ1,Task=agent_it_operations + Task=writing_code,Task=agent_software_engineering,0.07852412488174078,0.8431151241534989,1.044071098160926
+RQ1,Task=agent_data_analytics + Task=generating_content,Task=agent_software_engineering,0.09092820351098496,0.8422590068159688,1.0430109257797853
+RQ1,Task=agent_it_operations + Task=learning_new_concepts,Task=agent_software_engineering,0.0728476821192053,0.8420413122721749,1.042741343874668
+RQ1,Task=agent_it_operations,Task=writing_code,0.09313570902974877,0.6651651651651652,1.042629134324636
+RQ1,Task=generating_content,Task=agent_software_engineering,0.3793755912961211,0.8418474457662701,1.042501269405692
+RQ1,Task=search_answers,Task=agent_software_engineering,0.5973930411016504,0.8405561307498891,1.0409021702452088
+RQ1,Task=agent_software_engineering,Task=search_answers,0.5973930411016504,0.7397813069513147,1.0409021702452088
+RQ1,Task=agent_it_operations + Task=search_answers,Task=agent_software_engineering,0.08945653316514243,0.838423645320197,1.0382614082180466
+RQ1,Task=agent_data_analytics + Task=search_answers,Task=agent_software_engineering,0.12235887732576474,0.837410071942446,1.0370062502458328
+RQ1,Task=agent_it_operations + Task=generating_content,Task=agent_software_engineering,0.06296646693997687,0.8319444444444445,1.0302378937776622
+RQ1,Task=agent_it_operations,Task=agent_software_engineering + Task=writing_code,0.07852412488174078,0.5608108108108109,1.0285315680052523
+RQ1,Task=agent_business_process,Task=agent_software_engineering + Task=writing_code,0.07820876695048881,0.5560538116591929,1.019807193042973
+RQ1,Task=agent_business_process + Task=agent_data_analytics,Task=agent_software_engineering,0.05266477451907915,0.8226600985221675,1.0187406296851573
+RQ1,Task=agent_business_process,Task=agent_software_engineering + Task=search_answers,0.08514664143803216,0.6053811659192825,1.0133716402234971
+RQ1,Task=agent_business_process + Task=testing_code,Task=agent_software_engineering,0.05792074003994534,0.8150887573964497,1.0093646640344214
+RQ1,Task=agent_business_process + Task=writing_code,Task=agent_software_engineering,0.07820876695048881,0.8131147540983608,1.0069201582579674
+RQ1,Task=agent_business_process + Task=agent_it_operations,Task=agent_software_engineering,0.03784295175023652,0.8126410835214446,1.0063335885888443
+RQ1,Task=agent_business_process + Task=debugging_code,Task=agent_software_engineering,0.06822243246084306,0.81125,1.004610941161156
+RQ1,Task=agent_business_process + Task=documentation,Task=agent_software_engineering,0.06380742142331547,0.8104138851802404,1.0035755388856582
+RQ1,Task=agent_business_process + Task=learning_codebase,Task=agent_software_engineering,0.06328182487122884,0.810228802153432,1.0033463414326476
+RQ1,Task=agent_business_process + Task=learning_new_concepts,Task=agent_software_engineering,0.07253232418795333,0.8098591549295775,1.0028885890191448
+RQ1,Task=agent_it_operations,Task=agent_software_engineering,0.11331861662987491,0.8093093093093094,1.0022076880316924
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_MonthlyInfrequent,aiagentchange=AgentChange_Minimal,0.033953537264795546,0.7745803357314149,2.9772051449749295
+RQ2,aiselect=AIUse_MonthlyInfrequent,aiagentchange=AgentChange_Minimal,0.07127089246294545,0.7159450897571279,2.751832581357397
+RQ2,aiagents=Agents_MonthlyInfrequent + aiselect=AIUse_MonthlyInfrequent,aiagentchange=AgentChange_Minimal,0.03164091243561442,0.7,2.6905454545454544
+RQ2,aiagents=Agents_Daily + aiselect=AIUse_Daily,aiagentchange=AgentChange_GreatExtent,0.16009670976558393,0.5073284477015323,1.9812050586965013
+RQ2,aiagents=Agents_Daily + aiselect=AIUse_Daily,aisent=Sentiment_VeryFavorable,0.17208031115315883,0.5453031312458362,1.642643662932755
+RQ2,aiagents=Agents_Daily,aisent=Sentiment_VeryFavorable,0.17439293598233996,0.5271687321258341,1.5880165132086956
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Daily,aiagentchange=AgentChange_Somewhat,0.07841900557132345,0.6094771241830065,1.3058459194488605
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Weekly,aiagentchange=AgentChange_Somewhat,0.03805319037107117,0.5963756177924218,1.2777750567701145
+RQ2,aiagents=Agents_Weekly,aiagentchange=AgentChange_Somewhat,0.1199411331861663,0.5899689762150983,1.264048394309511
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_Weekly,aisent=Sentiment_Favorable,0.0355303269210554,0.5504885993485342,1.2438950227084575
+RQ2,aiselect=AIUse_Weekly,aisent=Sentiment_Favorable,0.09439714075475665,0.5383693045563549,1.2165100223858918
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Weekly,aisent=Sentiment_Favorable,0.03405865657521287,0.5337726523887973,1.2061233354334036
+RQ2,aiagents=Agents_MonthlyInfrequent + aiselect=AIUse_Daily,aiagentchange=AgentChange_Somewhat,0.04194260485651214,0.5443383356070941,1.1662816636554698
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_Daily,aisent=Sentiment_Favorable,0.08903605592347315,0.5152068126520681,1.1641715935294832
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_Daily,aiagentchange=AgentChange_Somewhat,0.09303058971933144,0.5383211678832116,1.153389475241665
+RQ2,aiagents=Agents_Weekly,aisent=Sentiment_Favorable,0.1025964469673079,0.5046535677352637,1.1403252707519154
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Daily,aisent=Sentiment_Favorable,0.0644381372858194,0.5008169934640523,1.1316560709794607
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Weekly,Frustration=fru_debugging_effort,0.03532008830022075,0.5535420098846787,1.1292826806847411
+RQ2,aiselect=AIUse_Weekly,aiagentchange=AgentChange_Somewhat,0.09229475454641017,0.526378896882494,1.1278023527124246
+RQ2,aiselect=AIUse_MonthlyInfrequent,Frustration=fru_debugging_effort,0.054451802796173655,0.5469904963041182,1.115916918580544
+RQ2,aiselect=AIUse_Weekly,Frustration=fru_debugging_effort,0.09534321454851256,0.5437649880095923,1.109336549632265
+RQ2,aiagents=Agents_MonthlyInfrequent,Frustration=fru_debugging_effort,0.09124356144223694,0.5411471321695761,1.1039958542417279
+RQ2,aiagents=Agents_MonthlyInfrequent + aiselect=AIUse_Daily,Frustration=fru_almost_correct,0.0630715862503942,0.8185538881309686,1.070806262072319
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_Weekly,Frustration=fru_debugging_effort,0.03384841795437822,0.5244299674267101,1.069891117334397
+RQ2,aiagents=Agents_MonthlyInfrequent + aiselect=AIUse_Daily,Frustration=fru_debugging_effort,0.04015557657941764,0.5211459754433833,1.0631914356407688
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_Daily,Frustration=fru_almost_correct,0.1404393987175444,0.8126520681265206,1.0630856881308568
+RQ2,aiagents=Agents_Weekly,Frustration=fru_debugging_effort,0.10501419110690634,0.516546018614271,1.053807050198919
+RQ2,aiselect=AIUse_Daily,Frustration=fru_almost_correct,0.546620414170083,0.7875208238679388,1.0302097906292218
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Daily,Frustration=fru_almost_correct,0.10049406075896142,0.7810457516339868,1.0217393062835693
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Daily,Frustration=fru_debugging_effort,0.0644381372858194,0.5008169934640523,1.0217182197777244
+RQ2,aiagents=Agents_Weekly + aiselect=AIUse_Weekly,Frustration=fru_almost_correct,0.04961631451697677,0.7775947281713343,1.0172247867290847
+RQ2,aiagents=Agents_CopilotOnly + aiselect=AIUse_Weekly,Frustration=fru_almost_correct,0.04982655313781142,0.7719869706840391,1.0098888960557293
+RQ2,aiagents=Agents_Weekly,Frustration=fru_almost_correct,0.15673289183222958,0.7709410548086867,1.008520662045522
+RQ2,aiagents=Agents_CopilotOnly,Frustration=fru_almost_correct,0.2287396194680963,0.7694483734087695,1.0065679835310264
+RQ2,aiagents=Agents_Daily + aiselect=AIUse_Daily,Frustration=fru_almost_correct,0.24261536844318302,0.7688207861425717,1.0057469937533394

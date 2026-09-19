@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block title %}Descriptive Analysis — AI Productivity Prediction{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title"><i class="bi bi-bar-chart-line-fill text-primary me-2"></i>Descriptive Analysis</h1>
+        <p class="page-description">Visual exploration of AI usage patterns, attitudes, and developer characteristics.</p>
+    </div>
+</section>
+
+<section class="container pb-5">
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">Target Class Distribution</h3>
+                <p class="chart-subtitle">"AI agents have increased my productivity." — Survey responses</p>
+                <div class="chart-wrapper">
+                    <canvas id="targetDistChart"></canvas>
+                </div>
+                <p class="chart-interp">
+                    <i class="bi bi-info-circle-fill text-primary me-1"></i>
+                    The majority of developers <strong>Agree</strong> (68.5%) that AI agents have improved their productivity,
+                    with <strong>Neutral</strong> (20.2%) and <strong>Disagree</strong> (11.3%) making up the remainder.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">AI-Assisted Activities</h3>
+                <p class="chart-subtitle">Frequency of AI usage across different development tasks</p>
+                <div class="chart-wrapper">
+                    <canvas id="aiActivitiesChart"></canvas>
+                </div>
+                <p class="chart-interp">
+                    <i class="bi bi-info-circle-fill text-primary me-1"></i>
+                    Search for answers, writing code, and learning new concepts or technologies are the top three AI-assisted activities among developers.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">AI Agent Usage by Domain</h3>
+                <p class="chart-subtitle">Developers using specialized AI agents across different work areas</p>
+                <div class="chart-wrapper">
+                    <canvas id="aiAgentChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">AI Attitudes</h3>
+                <p class="chart-subtitle">Developer sentiment and perceptions toward AI tools</p>
+                <div class="tabs-container mb-0">
+                    <ul class="nav nav-tabs" id="attitudeTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-sentiment" type="button">Sentiment</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-accuracy" type="button">Accuracy</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-complexity" type="button">Complexity</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="attitudeTabContent">
+                        <div class="tab-pane fade show active" id="tab-sentiment">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="sentimentChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-accuracy">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="accuracyChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-complexity">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="complexityChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">AI Frustrations</h3>
+                <p class="chart-subtitle">Most common pain points reported when using AI tools</p>
+                <div class="chart-wrapper">
+                    <canvas id="frustrationsChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">Developer Characteristics</h3>
+                <p class="chart-subtitle">Profile breakdowns of survey respondents</p>
+                <div class="tabs-container mb-0">
+                    <ul class="nav nav-tabs" id="devTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-exp" type="button">Experience</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-type" type="button">Dev Type</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-remote" type="button">Remote Work</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="devTabContent">
+                        <div class="tab-pane fade show active" id="tab-exp">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="expChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-type">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="typeChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-remote">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="remoteChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">AI Agent Changes</h3>
+                <p class="chart-subtitle">How developers perceive the evolution of AI agents in their workflow</p>
+                <div class="chart-wrapper">
+                    <canvas id="agentChangesChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card">
+                <h3 class="chart-title">AI Usage</h3>
+                <p class="chart-subtitle">How frequently developers use AI tools</p>
+                <div class="tabs-container mb-0">
+                    <ul class="nav nav-tabs" id="aiUsageTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-ai-tools" type="button">AI Tools</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ai-agents" type="button">AI Agents</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="aiUsageContent">
+                        <div class="tab-pane fade show active" id="tab-ai-tools">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="aiToolsChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-ai-agents">
+                            <div class="chart-wrapper" style="height: 240px;">
+                                <canvas id="aiAgentsChart"></canvas>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,1194 @@
+{% extends 'base.html' %}
+
+{% block title %}Data Preprocessing — AI Productivity Prediction{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">
+            <i class="bi bi-sliders2 text-primary me-2"></i>
+            Data Preprocessing
+        </h1>
+
+        <p class="page-description">
+            Feature engineering, cleaning, and transformation pipeline for the dataset.
+        </p>
+    </div>
+</section>
+
+<section class="container pb-5">
+    <div class="preprocessing-container">
+
+        <div class="preprocessing-content" id="preprocessing-content">
+
+            <div class="preprocessing-section" id="feature-engineering">
+
+                <h2>Feature Engineering</h2>
+
+                <div id="target-construction">
+                    <h3>Target Class Construction</h3>
+
+                    <p>
+                        The target variable is derived from the survey statement:
+                        <strong class="text-primary">
+                            "AI agents have increased my productivity."
+                        </strong>
+                        Responses are encoded into three ordinal classes:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <strong>Class 0 — Disagree:</strong>
+                            Strongly disagree or Disagree
+                        </li>
+                        <li>
+                            <strong>Class 1 — Neutral:</strong>
+                            Neither agree nor disagree
+                        </li>
+                        <li>
+                            <strong>Class 2 — Agree:</strong>
+                            Agree or Strongly agree
+                        </li>
+                    </ul>
+
+                    <div class="code-block-wrapper" data-code="target-class">
+
+                        <div class="code-block-header">
+                            <span class="code-block-title">
+                                <i class="bi bi-code-slash me-1"></i>
+                                Python — Target Class Construction
+                            </span>
+
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="code-block-pre"><code><span class="cmt"># Target definition</span>
+<span class="kw">PRODUCTIVITY_STR</span> = <span class="str">"AI agents have increased my productivity"</span>
+
+<span class="kw">agree_cols</span> = [
+    <span class="str">"AIAgentImpactStrongly agree"</span>,
+    <span class="str">"AIAgentImpactSomewhat agree"</span>
+]
+
+<span class="kw">neutral_cols</span> = [
+    <span class="str">"AIAgentImpactNeutral"</span>
+]
+
+<span class="kw">disagree_cols</span> = [
+    <span class="str">"AIAgentImpactSomewhat disagree"</span>,
+    <span class="str">"AIAgentImpactStrongly disagree"</span>
+]
+
+<span class="kw">def</span> <span class="fn">get_target</span>(row):
+    <span class="kw">for</span> c <span class="kw">in</span> agree_cols:
+        <span class="kw">if</span> pd.notna(row[c]) <span class="kw">and</span> PRODUCTIVITY_STR <span class="kw">in</span> str(row[c]):
+            <span class="kw">return</span> <span class="num">2</span>
+
+    <span class="kw">for</span> c <span class="kw">in</span> neutral_cols:
+        <span class="kw">if</span> pd.notna(row[c]) <span class="kw">and</span> PRODUCTIVITY_STR <span class="kw">in</span> str(row[c]):
+            <span class="kw">return</span> <span class="num">1</span>
+
+    <span class="kw">for</span> c <span class="kw">in</span> disagree_cols:
+        <span class="kw">if</span> pd.notna(row[c]) <span class="kw">and</span> PRODUCTIVITY_STR <span class="kw">in</span> str(row[c]):
+            <span class="kw">return</span> <span class="num">0</span>
+
+    <span class="kw">return</span> np.nan
+
+df[<span class="str">"target"</span>] = df.apply(get_target, axis=<span class="num">1</span>)
+df = df[df[<span class="str">"target"</span>].notna()].copy()
+
+<span class="fn">print</span>(<span class="str">"Target value_counts:"</span>)
+<span class="fn">print</span>(df[<span class="str">"target"</span>].value_counts().sort_index().to_string())</code></pre>
+
+                    </div>
+
+                    <div class="output-block-wrapper mt-4" data-output="target-class">
+
+                        <div class="output-block-header">
+                            <span class="output-block-title">
+                                <i class="bi bi-terminal-fill"></i>
+                                OUTPUT — Target Value Counts
+                            </span>
+
+                            <button class="output-copy-btn" onclick="copyOutput(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="output-block-pre"><code>Target value_counts:
+<span class="out-n">0.0</span>    <span class="out-n">1391</span>
+<span class="out-n">1.0</span>    <span class="out-n">2604</span>
+<span class="out-n">2.0</span>    <span class="out-n">8776</span></code></pre>
+
+                    </div>
+                </div>
+
+                <div id="filtering-developers">
+
+                    <h3>Filtering Developers</h3>
+
+                    <p>
+                        We filter the raw survey to retain only professional,
+                        employed developers with valid work experience:
+                    </p>
+
+                    <div class="info-card">
+
+                        <div class="info-card-title">
+                            <i class="bi bi-filter-circle"></i>
+                            Inclusion Criteria
+                        </div>
+
+                        <div class="info-card-content">
+                            <ul class="mb-0">
+                                <li>
+                                    <code>MainBranch == 'Developer by profession'</code>
+                                </li>
+                                <li>
+                                    <code>Employment</code> is
+                                    <em>Employed</em> or
+                                    <em>Independent contractor / freelancer</em>
+                                </li>
+                                <li>
+                                    <code>WorkExp</code> is not null
+                                </li>
+                                <li>
+                                    <code>WorkExp &gt; 0</code>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="code-block-wrapper" data-code="filtering">
+
+                        <div class="code-block-header">
+                            <span class="code-block-title">
+                                <i class="bi bi-code-slash me-1"></i>
+                                Python — Filtering Developers
+                            </span>
+
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="code-block-pre"><code><span class="kw">shape_before</span> = df.shape[<span class="num">0</span>]
+
+<span class="kw">employment_ok</span> = df[<span class="str">"Employment"</span>].isin([
+    <span class="str">"Employed"</span>,
+    <span class="str">"Independent contractor, freelancer, or self-employed"</span>
+])
+
+df = df[
+    (df[<span class="str">"MainBranch"</span>] == <span class="str">"I am a developer by profession"</span>)
+    &amp; employment_ok
+    &amp; df[<span class="str">"WorkExp"</span>].notna()
+    &amp; (df[<span class="str">"WorkExp"</span>] != <span class="num">0</span>)
+].copy()
+
+<span class="kw">shape_after</span> = df.shape[<span class="num">0</span>]
+
+<span class="fn">print</span>(<span class="str">f"Shape before filter: ({shape_before}, {df.shape[1]})"</span>)
+<span class="fn">print</span>(<span class="str">f"Shape after filter:  ({shape_after}, {df.shape[1]})"</span>)</code></pre>
+
+                    </div>
+
+                    <div class="output-block-wrapper mt-4" data-output="filtering">
+
+                        <div class="output-block-header">
+                            <span class="output-block-title">
+                                <i class="bi bi-terminal-fill"></i>
+                                OUTPUT — Filtering Summary
+                            </span>
+
+                            <button class="output-copy-btn" onclick="copyOutput(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="output-block-pre"><code>Shape before filter: (12771, 173)
+Shape after filter:  (9513, 173)</code></pre>
+
+                    </div>
+
+                </div>
+
+                <div id="selecting-columns">
+
+                    <h3>Selecting Columns</h3>
+
+                    <p>
+                        We select the following columns for analysis:
+                    </p>
+
+                    <div class="code-block-wrapper" data-code="selecting-columns">
+
+                        <div class="code-block-header">
+                            <span class="code-block-title">
+                                <i class="bi bi-code-slash me-1"></i>
+                                Python — Selecting Columns
+                            </span>
+
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="code-block-pre"><code><span class="kw">selected_columns</span> = [
+    <span class="str">"ResponseId"</span>,
+
+    <span class="cmt"># 1. Developer Characteristics</span>
+    <span class="str">"Age"</span>,
+    <span class="str">"EdLevel"</span>,
+    <span class="str">"DevType"</span>,
+    <span class="str">"WorkExp"</span>,
+    <span class="str">"YearsCode"</span>,
+    <span class="str">"OrgSize"</span>,
+    <span class="str">"RemoteWork"</span>,
+    <span class="str">"Industry"</span>,
+    <span class="str">"Employment"</span>,
+
+    <span class="cmt"># 2. AI Usage</span>
+    <span class="str">"LearnCodeAI"</span>,
+    <span class="str">"AIThreat"</span>,
+    <span class="str">"NewRole"</span>,
+    <span class="str">"AISelect"</span>,
+    <span class="str">"AISent"</span>,
+    <span class="str">"AIAcc"</span>,
+    <span class="str">"AIComplex"</span>,
+    <span class="str">"AIFrustration"</span>,
+    <span class="str">"AIAgents"</span>,
+    <span class="str">"AIAgentChange"</span>,
+    <span class="str">"AIAgent_Uses"</span>,
+    <span class="str">"AIToolCurrently mostly AI"</span>,
+    <span class="str">"AIToolCurrently partially AI"</span>,
+    <span class="str">"AIModelsHaveWorkedWith"</span>,
+
+    <span class="cmt"># 3. Technical Environment</span>
+    <span class="str">"LanguageHaveWorkedWith"</span>,
+    <span class="str">"DatabaseHaveWorkedWith"</span>,
+    <span class="str">"PlatformHaveWorkedWith"</span>,
+    <span class="str">"WebframeHaveWorkedWith"</span>,
+    <span class="str">"DevEnvsHaveWorkedWith"</span>,
+]
+
+<span class="kw">cols</span> = [
+    c <span class="kw">for</span> c <span class="kw">in</span> selected_columns
+    <span class="kw">if</span> c <span class="kw">in</span> df.columns
+]
+
+<span class="kw">missing</span> = set(selected_columns) - set(cols)
+
+<span class="kw">if</span> missing:
+    <span class="fn">print</span>(<span class="str">"Missing from data:"</span>, missing)
+
+<span class="cmt"># Keep target + selected features</span>
+df = df[[<span class="str">"target"</span>] + cols].copy()
+
+<span class="fn">print</span>(<span class="str">"Shape after column selection:"</span>, df.shape)</code></pre>
+
+                    </div>
+
+                    <div class="output-block-wrapper mt-4" data-output="column-selection">
+
+                        <div class="output-block-header">
+                            <span class="output-block-title">
+                                <i class="bi bi-terminal-fill"></i>
+                                OUTPUT — Column Selection
+                            </span>
+
+                            <button class="output-copy-btn" onclick="copyOutput(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="output-block-pre"><code>Shape after column selection: (9513, 30)</code></pre>
+
+                    </div>
+
+                </div>
+
+                <div id="developer-type-bucketing">
+
+                <h3>Developer Type Bucketing</h3>
+
+                <p>
+                    Developer types are grouped into broader categories to reduce the number
+                    of individual categories and provide a more meaningful representation
+                    of developers' professional roles.
+                </p>
+
+    <div class="code-block-wrapper" data-code="developer-type-bucketing">
+
+        <div class="code-block-header">
+            <span class="code-block-title">
+                <i class="bi bi-code-slash me-1"></i>
+                Python — Developer Type Bucketing
+            </span>
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                <i class="bi bi-clipboard"></i>
+                Copy
+            </button>
+        </div>
+
+        <pre class="code-block-pre"><code>BUCKET_ORDER = [
+    (
+        <span class="str">"Data/AI"</span>,
+        [
+            <span class="str">"Data scientist"</span>,
+            <span class="str">"Data engineer"</span>,
+            <span class="str">"AI/ML engineer"</span>,
+            <span class="str">"Applied scientist"</span>,
+            <span class="str">"Data or business analyst"</span>
+        ]
+    ),
+
+    (
+        <span class="str">"Infrastructure/Ops"</span>,
+        [
+            <span class="str">"Cloud infrastructure engineer"</span>,
+            <span class="str">"DevOps engineer or professional"</span>,
+            <span class="str">"System administrator"</span>,
+            <span class="str">"Cybersecurity or InfoSec professional"</span>,
+            <span class="str">"Support engineer or analyst"</span>,
+            <span class="str">"Database administrator or engineer"</span>
+        ]
+    ),
+
+    (
+        <span class="str">"Web/Software"</span>,
+        [
+            <span class="str">"Developer, front-end"</span>,
+            <span class="str">"Developer, back-end"</span>,
+            <span class="str">"Developer, full-stack"</span>,
+            <span class="str">"Developer, mobile"</span>,
+            <span class="str">"Developer, desktop or enterprise applications"</span>,
+            <span class="str">"Developer, embedded applications or devices"</span>,
+            <span class="str">"Developer, QA or test"</span>,
+            <span class="str">"Developer, game or graphics"</span>,
+            <span class="str">"Developer, AI apps or physical AI"</span>,
+            <span class="str">"Architect, software or solutions"</span>
+        ]
+    ),
+
+    (
+        <span class="str">"Management/Leadership"</span>,
+        [
+            <span class="str">"Senior executive (C-suite, VP, etc.)"</span>,
+            <span class="str">"Engineering manager"</span>
+        ]
+    ),
+
+    (
+        <span class="str">"Business/Product"</span>,
+        [
+            <span class="str">"Founder, technology or otherwise"</span>,
+            <span class="str">"Financial analyst or engineer"</span>,
+            <span class="str">"Project manager"</span>,
+            <span class="str">"Product manager"</span>
+        ]
+    ),
+
+    (
+        <span class="str">"Academic/Research"</span>,
+        [
+            <span class="str">"Academic researcher"</span>,
+            <span class="str">"Student"</span>
+        ]
+    ),
+
+    (
+        <span class="str">"UX/UI Design"</span>,
+        [
+            <span class="str">"UX, Research Ops or UI design professional"</span>
+        ]
+    )
+]
+
+
+<span class="kw">def</span> <span class="fn">devtype_bucket</span>(s):
+    <span class="kw">if</span> pd.isna(s) <span class="kw">or</span> str(s).strip() == <span class="str">""</span>:
+        <span class="kw">return</span> <span class="str">"Other"</span>
+
+    s = str(s).strip()
+
+    <span class="kw">for</span> bucket, devtypes <span class="kw">in</span> BUCKET_ORDER:
+        <span class="kw">if</span> s <span class="kw">in</span> devtypes:
+            <span class="kw">return</span> bucket
+
+    <span class="kw">return</span> <span class="str">"Other"</span>
+
+
+df[<span class="str">"devtype"</span>] = df[<span class="str">"DevType"</span>].<span class="fn">apply</span>(devtype_bucket)</code></pre>
+
+                    </div>
+
+                </div>
+
+                <div id="ai-editor-features">
+
+    <h3>AI Editor Feature Construction</h3>
+
+    <p>
+        AI-powered development environments are grouped into a single binary
+        feature to indicate whether a developer has worked with at least one
+        supported AI editor. The resulting <code>has_ai_editor</code> feature
+        is assigned <strong>1</strong> when an AI editor is reported and
+        <strong>0</strong> otherwise.
+    </p>
+
+    <div class="code-block-wrapper" data-code="ai-editor">
+
+        <div class="code-block-header">
+            <span class="code-block-title">
+                <i class="bi bi-code-slash me-1"></i>
+                Python — AI Editor Feature Construction
+            </span>
+
+            <button class="copy-btn" onclick="copyCode(this)">
+                <i class="bi bi-clipboard"></i>
+                Copy
+            </button>
+        </div>
+
+        <pre class="code-block-pre"><code>AI_EDITORS = [
+    <span class="str">"Cursor"</span>,
+    <span class="str">"Claude Code"</span>,
+    <span class="str">"Windsurf"</span>,
+    <span class="str">"Cline and/or Roo"</span>,
+    <span class="str">"Lovable.dev"</span>,
+    <span class="str">"Bolt"</span>,
+    <span class="str">"Aider"</span>,
+    <span class="str">"Trae"</span>,
+    <span class="str">"Copilot"</span>
+]
+
+
+<span class="kw">def</span> <span class="fn">has_ai_editor</span>(s):
+    <span class="kw">if</span> pd.isna(s) <span class="kw">or</span> str(s).strip() == <span class="str">""</span>:
+        <span class="kw">return</span> <span class="num">0</span>
+
+    editors = [x.strip().lower() <span class="kw">for</span> x <span class="kw">in</span> str(s).split(<span class="str">";"</span>)]
+
+    <span class="kw">return</span> int(<span class="fn">any</span>(editor.lower() <span class="kw">in</span> editors <span class="kw">for</span> editor <span class="kw">in</span> AI_EDITORS))
+
+
+df[<span class="str">"has_ai_editor"</span>] = df[<span class="str">"DevEnvsHaveWorkedWith"</span>].<span class="fn">apply</span>(has_ai_editor)</code></pre>
+
+                    </div>
+
+                </div>
+
+
+                
+
+                <div id="multiselect-transform">
+
+                    <h3>Multi-Select Feature Transformation</h3>
+
+                    <p>
+                        Multi-select survey responses (semicolon-separated lists)
+                        are transformed into binary indicator columns. Additionally,
+                        we compute counts of selected items for AI tasks, AI agents,
+                        and frustration categories. Total of 28 binary features and 3 count features are created.
+                    </p>
+
+                    <div class="mb-3">
+                        <span class="feature-tag">ai_tasks_count</span>
+                        <span class="feature-tag">agent_use_count</span>
+                        <span class="feature-tag">aifrustration_count</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="feature-tag">documenting_code</span>
+                        <span class="feature-tag">deployment_monitoring</span>
+                        <span class="feature-tag">documentation</span>
+                        <span class="feature-tag">testing_code</span>
+                        <span class="feature-tag">learning_codebase</span>
+                        <span class="feature-tag">generating_content</span>
+                        <span class="feature-tag">search_answers</span>
+                        <span class="feature-tag">writing_code</span>
+                        <span class="feature-tag">predictive_analytics</span>
+                        <span class="feature-tag">debugging_code</span>
+                        <span class="feature-tag">commit_review</span>
+                        <span class="feature-tag">project_planning</span>
+                        <span class="feature-tag">learning_new_concepts</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="feature-tag">agent_business_process</span>
+                        <span class="feature-tag">agent_customer_service</span>
+                        <span class="feature-tag">agent_cybersecurity</span>
+                        <span class="feature-tag">agent_data_analytics</span>
+                        <span class="feature-tag">agent_decision_intelligence</span>
+                        <span class="feature-tag">agent_it_operations</span>
+                        <span class="feature-tag">agent_marketing</span>
+                        <span class="feature-tag">agent_software_engineering</span>
+                        <span class="feature-tag">agent_robotics</span>
+                    </div>
+
+                    <div class="mb-3">
+                        <span class="feature-tag">fru_almost_correct</span>
+                        <span class="feature-tag">fru_not_regular</span>
+                        <span class="feature-tag">fru_debugging_effort</span>
+                        <span class="feature-tag">fru_lower_confidence</span>
+                        <span class="feature-tag">fru_no_issues</span>
+                        <span class="feature-tag">fru_code_understanding</span>
+                    </div>
+
+
+                    <div class="code-block-wrapper" data-code="ai-features">
+
+    <div class="code-block-header">
+        <span class="code-block-title">
+            <i class="bi bi-code-slash me-1"></i>
+            Python — AI Feature Transformation
+        </span>
+
+        <button class="copy-btn" onclick="copyCode(this)">
+            <i class="bi bi-clipboard"></i>
+            Copy
+        </button>
+    </div>
+
+    <pre class="code-block-pre"><code>AI_TASKS = {
+    <span class="str">"Documenting code"</span>: <span class="str">"documenting_code"</span>
+    <span class="str">"Deployment and monitoring"</span>: <span class="str">"deployment_monitoring"</span>
+    <span class="str">"Creating or maintaining documentation"</span>: <span class="str">"documentation"</span>
+    <span class="str">"Testing code"</span>: <span class="str">"testing_code"</span>
+    <span class="str">"Learning about a codebase"</span>: <span class="str">"learning_codebase"</span>
+    <span class="str">"Generating content or synthetic data"</span>: <span class="str">"generating_content"</span>
+    <span class="str">"Search for answers"</span>: <span class="str">"search_answers"</span>
+    <span class="str">"Writing code"</span>: <span class="str">"writing_code"</span>
+    <span class="str">"Predictive analytics"</span>: <span class="str">"predictive_analytics"</span>
+    <span class="str">"Debugging or fixing code"</span>: <span class="str">"debugging_code"</span>
+    <span class="str">"Committing and reviewing code"</span>: <span class="str">"commit_review"</span>
+    <span class="str">"Project planning"</span>: <span class="str">"project_planning"</span>
+    <span class="str">"Learning new concepts or technologies"</span>: <span class="str">"learning_new_concepts"</span>
+}
+
+
+ai_tasks = (
+    df[<span class="str">"AIToolCurrently mostly AI"</span>].<span class="fn">fillna</span>(<span class="str">""</span>) + <span class="str">";"</span> +
+    df[<span class="str">"AIToolCurrently partially AI"</span>].<span class="fn">fillna</span>(<span class="str">""</span>)
+)
+
+
+<span class="kw">for</span> task, feature <span class="kw">in</span> AI_TASKS.<span class="fn">items</span>():
+    df[feature] = ai_tasks.<span class="fn">str</span>.<span class="fn">contains</span>(
+        task,
+        regex=<span class="kw">False</span>
+    ).<span class="fn">astype</span>(int)
+
+
+df[<span class="str">"ai_tasks_count"</span>] = (
+    ai_tasks.<span class="fn">str</span>.<span class="fn">split</span>(<span class="str">";"</span>)
+    .<span class="fn">apply</span>(<span class="kw">lambda</span> x: len([item <span class="kw">for</span> item <span class="kw">in</span> x <span class="kw">if</span> item.strip()]))
+)
+
+
+AI_AGENT_USES = {
+    <span class="str">"Business process automation"</span>: <span class="str">"agent_business_process"</span>,
+    <span class="str">"Customer service support"</span>: <span class="str">"agent_customer_service"</span>,
+    <span class="str">"Cybersecurity"</span>: <span class="str">"agent_cybersecurity"</span>,
+    <span class="str">"Data and analytics"</span>: <span class="str">"agent_data_analytics"</span>,
+    <span class="str">"Decision intelligence"</span>: <span class="str">"agent_decision_intelligence"</span>,
+    <span class="str">"IT operations"</span>: <span class="str">"agent_it_operations"</span>,
+    <span class="str">"Marketing"</span>: <span class="str">"agent_marketing"</span>,
+    <span class="str">"Software engineering"</span>: <span class="str">"agent_software_engineering"</span>,
+    <span class="str">"Robotics"</span>: <span class="str">"agent_robotics"</span>
+}
+
+
+
+agent_uses = (
+    df[<span class="str">"AIAgent_Uses"</span>]
+    .<span class="fn">fillna</span>(<span class="str">""</span>)
+    .<span class="fn">str</span>.<span class="fn">split</span>(<span class="str">";"</span>)
+    .<span class="fn">apply</span>(<span class="kw">lambda</span> x: [item.strip() <span class="kw">for</span> item <span class="kw">in</span> x <span class="kw">if</span> item.strip()])
+)
+
+
+<span class="kw">for</span> use, feature <span class="kw">in</span> AI_AGENT_USES.<span class="fn">items</span>():
+    df[feature] = agent_uses.<span class="fn">apply</span>(
+        <span class="kw">lambda</span> x: int(use <span class="kw">in</span> x)
+    )
+
+
+df[<span class="str">"agent_use_count"</span>] = agent_uses.<span class="fn">str</span>.<span class="fn">len</span>()
+
+
+AI_FRUSTRATIONS = {
+    <span class="str">"AI solutions that are almost right, but not quite"</span>: <span class="str">"fru_almost_correct"</span>,
+    <span class="str">"I don’t use AI tools regularly"</span>: <span class="str">"fru_not_regular"</span>,
+    <span class="str">"Debugging AI-generated code is more time-consuming"</span>: <span class="str">"fru_debugging_effort"</span>,
+    <span class="str">"I’ve become less confident in my own problem-solving"</span>: <span class="str">"fru_lower_confidence"</span>,
+    <span class="str">"I haven’t encountered any problems"</span>: <span class="str">"fru_no_issues"</span>,
+    <span class="str">"It’s hard to understand how or why the code works"</span>: <span class="str">"fru_code_understanding"</span>
+}
+
+
+frustrations = (
+    df[<span class="str">"AIFrustration"</span>]
+    .<span class="fn">fillna</span>(<span class="str">""</span>)
+    .<span class="fn">str</span>.<span class="fn">split</span>(<span class="str">";"</span>)
+    .<span class="fn">apply</span>(<span class="kw">lambda</span> x: [item.strip() <span class="kw">for</span> item <span class="kw">in</span> x <span class="kw">if</span> item.strip()])
+)
+
+
+<span class="kw">for</span> problem, feature <span class="kw">in</span> AI_FRUSTRATIONS.<span class="fn">items</span>():
+    df[feature] = frustrations.<span class="fn">apply</span>(
+        <span class="kw">lambda</span> x: int(problem <span class="kw">in</span> x)
+    )
+
+
+df[<span class="str">"aifrustration_count"</span>] = frustrations.<span class="fn">str</span>.<span class="fn">len</span>()</code></pre>
+
+                    </div>
+
+                </div>   
+
+                <div id="ai-model-features">
+
+                    <h3>AI Model Feature Construction</h3>
+
+                    <p>
+                        Usage indicators for specific LLM families, plus the total
+                        count of LLMs reported per developer.
+                    </p>
+                    <div class="mb-3">
+                        <span class="feature-tag">llm_count</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="feature-tag">uses_openai</span>
+                        <span class="feature-tag">uses_claude</span>
+                        <span class="feature-tag">uses_gemini</span>
+                        <span class="feature-tag">uses_deepseek</span>
+                        <span class="feature-tag">uses_llama</span>
+                    </div>
+
+                    <div class="code-block-wrapper" data-code="llm">
+
+                        <div class="code-block-header">
+    <span class="code-block-title">
+        <i class="bi bi-code-slash me-1"></i>
+        Python — LLM Provider Feature Construction
+    </span>
+
+    <button class="copy-btn" onclick="copyCode(this)">
+        <i class="bi bi-clipboard"></i>
+        Copy
+    </button>
+</div>
+
+<pre class="code-block-pre"><code>LLM_PROVIDERS = {
+    <span class="str">"openAI"</span>: <span class="str">"uses_openai"</span>,
+    <span class="str">"Anthropic"</span>: <span class="str">"uses_claude"</span>,
+    <span class="str">"Gemini"</span>: <span class="str">"uses_gemini"</span>,
+    <span class="str">"DeepSeek"</span>: <span class="str">"uses_deepseek"</span>,
+    <span class="str">"Meta Llama"</span>: <span class="str">"uses_llama"</span>
+}
+
+models = df[<span class="str">"AIModelsHaveWorkedWith"</span>].<span class="fn">fillna</span>(<span class="str">""</span>)
+
+<span class="kw">for</span> provider, feature <span class="kw">in</span> LLM_PROVIDERS.<span class="fn">items</span>():
+    df[feature] = models.<span class="fn">str</span>.<span class="fn">contains</span>(
+        provider, regex=<span class="kw">False</span>
+    ).<span class="fn">astype</span>(int)
+
+df[<span class="str">"llm_count"</span>] = (
+    models.<span class="fn">str</span>.<span class="fn">split</span>(<span class="str">";"</span>)
+    .<span class="fn">apply</span>(<span class="kw">lambda</span> x: len([item <span class="kw">for</span> item <span class="kw">in</span> x <span class="kw">if</span> item.strip()]))
+)</code></pre>
+
+                    </div>
+
+                </div>   
+
+            </div>
+
+            <div class="preprocessing-section" id="preprocessing-pipeline">
+
+                <h2>Preprocessing</h2> 
+
+                <div id="encoding">
+
+                    <h3>Encoding Ordinal Features</h3>
+
+                    <p>
+                        Ordinal variables (e.g. sentiment scales) are assigned explicit
+                        numerical orders. Each exact text from survey questions was encoded with values that keep the natural order, 
+                        for example, giving higher values to higher order and lower values to lower order. 
+                    </p>
+
+                    <div class="code-block-wrapper" data-code="encoding">
+
+    <div class="code-block-header">
+        <span class="code-block-title">
+            <i class="bi bi-code-slash me-1"></i>
+            Python — Ordinal Feature Encoding
+        </span>
+
+        <button class="copy-btn" onclick="copyCode(this)">
+            <i class="bi bi-clipboard"></i>
+            Copy
+        </button>
+    </div>
+
+    <pre class="code-block-pre"><code><span class="cmt"># Ordinal mappings</span>
+AGE_MAP = {
+    <span class="str">"Under 18 years old"</span>: <span class="num">1</span>,
+    <span class="str">"18-24 years old"</span>: <span class="num">2</span>,
+    <span class="str">"25-34 years old"</span>: <span class="num">3</span>,
+    <span class="str">"35-44 years old"</span>: <span class="num">4</span>,
+    <span class="str">"45-54 years old"</span>: <span class="num">5</span>,
+    <span class="str">"55-64 years old"</span>: <span class="num">6</span>,
+    <span class="str">"65 years or older"</span>: <span class="num">7</span>,
+    <span class="str">"Prefer not to say"</span>: <span class="num">0</span>,
+}
+
+ORGSIZE_MAP = {
+    <span class="str">"Just me - I am a freelancer, sole proprietor, etc."</span>: <span class="num">1</span>,
+    <span class="str">"Less than 20 employees"</span>: <span class="num">2</span>,
+    <span class="str">"20 to 99 employees"</span>: <span class="num">3</span>,
+    <span class="str">"100 to 499 employees"</span>: <span class="num">4</span>,
+    <span class="str">"500 to 999 employees"</span>: <span class="num">5</span>,
+    <span class="str">"1,000 to 4,999 employees"</span>: <span class="num">6</span>,
+    <span class="str">"5,000 to 9,999 employees"</span>: <span class="num">7</span>,
+    <span class="str">"10,000 or more employees"</span>: <span class="num">8</span>,
+    <span class="str">"I don't know"</span>: <span class="num">0</span>,
+}
+
+EDLEVEL_MAP = {
+    <span class="str">"Primary/elementary school"</span>: <span class="num">1</span>,
+    <span class="str">"Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)"</span>: <span class="num">2</span>,
+    <span class="str">"Some college/university study without earning a degree"</span>: <span class="num">3</span>,
+    <span class="str">"Associate degree (A.A., A.S., etc.)"</span>: <span class="num">4</span>,
+    <span class="str">"Bachelor's degree (B.A., B.S., B.Eng., etc.)"</span>: <span class="num">5</span>,
+    <span class="str">"Master's degree (M.A., M.S., M.Eng., MBA, etc.)"</span>: <span class="num">6</span>,
+    <span class="str">"Professional degree (JD, MD, Ph.D, Ed.D, etc.)"</span>: <span class="num">7</span>,
+    <span class="str">"Other (please specify):"</span>: <span class="num">0</span>,
+}
+
+REMOTEWORK_MAP = {
+    <span class="str">"Remote"</span>: <span class="num">0</span>,
+    <span class="str">"In-person"</span>: <span class="num">1</span>,
+    <span class="str">"Hybrid (some remote, leans heavy to in-person)"</span>: <span class="num">2</span>,
+    <span class="str">"Hybrid (some in-person, leans heavy to flexibility)"</span>: <span class="num">3</span>,
+    <span class="str">"Your choice (very flexible, you can come in when you want or just as needed)"</span>: <span class="num">4</span>,
+}
+
+LEARNCODEAI_MAP = {
+    <span class="str">"Yes, I learned how to use AI-enabled tools required for my job or to benefit my career"</span>: <span class="num">4</span>,
+    <span class="str">"Yes, I learned how to use AI-enabled tools for my personal curiosity and/or hobbies"</span>: <span class="num">3</span>,
+    <span class="str">"No, I learned something that was not related to AI or AI enablement as required for my job or to benefit my career"</span>: <span class="num">2</span>,
+    <span class="str">"No, I learned something that was not related to AI or AI enablement for my personal curiosity and/or hobbies"</span>: <span class="num">1</span>,
+    <span class="str">"No, I didn't spend time learning in the past year"</span>: <span class="num">0</span>,
+}
+
+AITHREAT_MAP = {
+    <span class="str">"Yes"</span>: <span class="num">2</span>,
+    <span class="str">"No"</span>: <span class="num">1</span>,
+    <span class="str">"I'm not sure"</span>: <span class="num">0</span>,
+}
+
+NEWROLE_MAP = {
+    <span class="str">"I have strongly considered changing my career and/or the industry I work in"</span>: <span class="num">4</span>,
+    <span class="str">"I have somewhat considered changing my career and/or the industry I work in"</span>: <span class="num">3</span>,
+    <span class="str">"I have transitioned into a new career and/or industry voluntarily"</span>: <span class="num">2</span>,
+    <span class="str">"I have transitioned into a new career and/or industry involuntarily"</span>: <span class="num">1</span>,
+    <span class="str">"I have neither consider or transitioned into a new career or industry"</span>: <span class="num">0</span>,
+}
+
+AISELECT_MAP = {
+    <span class="str">"Yes, I use AI tools daily"</span>: <span class="num">4</span>,
+    <span class="str">"Yes, I use AI tools weekly"</span>: <span class="num">3</span>,
+    <span class="str">"Yes, I use AI tools monthly or infrequently"</span>: <span class="num">2</span>,
+    <span class="str">"No, but I plan to soon"</span>: <span class="num">1</span>,
+    <span class="str">"No, and I don't plan to"</span>: <span class="num">0</span>,
+}
+
+AISENT_MAP = {
+    <span class="str">"Very favorable"</span>: <span class="num">5</span>,
+    <span class="str">"Favorable"</span>: <span class="num">4</span>,
+    <span class="str">"Indifferent"</span>: <span class="num">3</span>,
+    <span class="str">"Unfavorable"</span>: <span class="num">2</span>,
+    <span class="str">"Very unfavorable"</span>: <span class="num">1</span>,
+    <span class="str">"Unsure"</span>: <span class="num">0</span>,
+}
+
+AIACC_MAP = {
+    <span class="str">"Highly trust"</span>: <span class="num">4</span>,
+    <span class="str">"Somewhat trust"</span>: <span class="num">3</span>,
+    <span class="str">"Neither trust nor distrust"</span>: <span class="num">2</span>,
+    <span class="str">"Somewhat distrust"</span>: <span class="num">1</span>,
+    <span class="str">"Highly distrust"</span>: <span class="num">0</span>,
+}
+
+AICOMPLEX_MAP = {
+    <span class="str">"Very well at handling complex tasks"</span>: <span class="num">5</span>,
+    <span class="str">"Good, but not great at handling complex tasks"</span>: <span class="num">4</span>,
+    <span class="str">"Neither good or bad at handling complex tasks"</span>: <span class="num">3</span>,
+    <span class="str">"Bad at handling complex tasks"</span>: <span class="num">2</span>,
+    <span class="str">"Very poor at handling complex tasks"</span>: <span class="num">1</span>,
+    <span class="str">"I don't use AI tools for complex tasks / I don't know"</span>: <span class="num">0</span>,
+}
+
+AIAGENTS_MAP = {
+    <span class="str">"Yes, I use AI agents at work daily"</span>: <span class="num">6</span>,
+    <span class="str">"Yes, I use AI agents at work weekly"</span>: <span class="num">5</span>,
+    <span class="str">"Yes, I use AI agents at work monthly or infrequently"</span>: <span class="num">4</span>,
+    <span class="str">"No, I use AI exclusively in copilot/autocomplete mode"</span>: <span class="num">3</span>,
+    <span class="str">"No, but I plan to"</span>: <span class="num">1</span>,
+    <span class="str">"No, and I don't plan to"</span>: <span class="num">0</span>,
+}
+
+AGENT_CHANGE_MAP = {
+    <span class="str">"Yes, to a great extent"</span>: <span class="num">4</span>,
+    <span class="str">"Yes, somewhat"</span>: <span class="num">3</span>,
+    <span class="str">"Not at all or minimally"</span>: <span class="num">2</span>,
+    <span class="str">"No, but my development work has changed somewhat due to non-AI factors"</span>: <span class="num">1</span>,
+    <span class="str">"No, but my development work has significantly changed due to non-AI factors"</span>: <span class="num">0</span>,
+}
+
+
+<span class="cmt"># Normalize survey responses before mapping</span>
+<span class="kw">def</span> <span class="fn">norm</span>(x):
+    <span class="kw">if</span> pd.isna(x):
+        <span class="kw">return</span> x
+
+    <span class="kw">return</span> (
+        str(x)
+        .strip()
+        .replace(<span class="str">"’"</span>, <span class="str">"'"</span>)
+    )
+
+
+<span class="cmt"># Apply ordinal mappings</span>
+df[<span class="str">"age"</span>] = df[<span class="str">"Age"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AGE_MAP)
+df[<span class="str">"orgsize"</span>] = df[<span class="str">"OrgSize"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(ORGSIZE_MAP)
+df[<span class="str">"edlevel"</span>] = df[<span class="str">"EdLevel"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(EDLEVEL_MAP)
+df[<span class="str">"remotework"</span>] = df[<span class="str">"RemoteWork"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(REMOTEWORK_MAP)
+df[<span class="str">"learncodeai"</span>] = df[<span class="str">"LearnCodeAI"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(LEARNCODEAI_MAP)
+df[<span class="str">"aithreat"</span>] = df[<span class="str">"AIThreat"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AITHREAT_MAP)
+df[<span class="str">"newrole"</span>] = df[<span class="str">"NewRole"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(NEWROLE_MAP)
+df[<span class="str">"aiselect"</span>] = df[<span class="str">"AISelect"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AISELECT_MAP)
+df[<span class="str">"aisent"</span>] = df[<span class="str">"AISent"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AISENT_MAP)
+df[<span class="str">"aiacc"</span>] = df[<span class="str">"AIAcc"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AIACC_MAP)
+df[<span class="str">"aicomplex"</span>] = df[<span class="str">"AIComplex"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AICOMPLEX_MAP)
+df[<span class="str">"aiagents"</span>] = df[<span class="str">"AIAgents"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AIAGENTS_MAP)
+df[<span class="str">"aiagentchange"</span>] = df[<span class="str">"AIAgentChange"</span>].<span class="fn">apply</span>(norm).<span class="fn">map</span>(AGENT_CHANGE_MAP)</code></pre>
+
+                    </div>
+
+                
+                </div>
+
+                <div id="missing-values">
+
+                    <h3>Handling Missing Values</h3>
+
+                    <p>
+                        Missing values are imputed according to the feature type:
+                    </p>
+
+                    <div class="info-card">
+
+                        <div class="info-card-title">
+                            <i class="bi bi-droplet-half"></i>
+                            Imputation Strategy
+                        </div>
+
+                        <div class="info-card-content">
+                            <ul class="mb-0">
+                                <li>
+                                    <strong>Numeric values</strong>
+                                    → Mean (rounded where appropriate)
+                                </li>
+                                <li>
+                                    <strong>Ordinal / Categorical</strong>
+                                    → Mode
+                                </li>
+                                <li>
+                                    <strong>Relevant variables</strong>
+                                    → Context-aware handling (special cases)
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="code-block-wrapper" data-code="missing-matrix">
+
+    <div class="code-block-header">
+        <span class="code-block-title">
+            <i class="bi bi-code-slash me-1"></i>
+            Python — Missing Value Matrix
+        </span>
+
+        <button class="copy-btn" onclick="copyCode(this)">
+            <i class="bi bi-clipboard"></i>
+            Copy
+        </button>
+    </div>
+
+    <pre class="code-block-pre"><code><span class="cmt"># Visualize missing values by employment status</span>
+<span class="fn">msno.matrix</span>(df.sort_values(by=<span class="str">'Employment'</span>))
+<span class="fn">plt.show</span>()</code></pre>
+
+                    </div>
+
+                    <div class="output-block-wrapper mt-4" data-output="target-class">
+
+    <div class="output-block-header">
+        <span class="output-block-title">
+            <i class="bi bi-bar-chart-fill"></i>
+            OUTPUT — Missing Value Matrix
+        </span>
+    </div>
+
+    <div class="output-image-container">
+        <img src="{{ url_for('static', filename='images/missing-value-matrix.png') }}"
+             alt="Target class distribution"
+             class="img-fluid">
+    </div>
+
+                    </div>
+
+                    <p class="mt-3">
+                        The result showed that missing values in orgsize and remotework shared similar missing patterns related to employment status. 
+                        Therefore, these variables were not handled by imputing with a value that is common across the entire dataset. 
+                        So, the missing values were handled by imputing with the frequent observed value within each corresponding employment group respectively.
+                    </p>
+
+                    
+
+
+                </div>
+
+                <div id="data-normalization">
+
+                    <h3>Data Normalization</h3>
+
+                    <p>
+                        Numeric features such as years of experience, task counts,
+                        and LLM counts are standardized using
+                        <code>RobustScaler</code>, while ordinal features are
+                        kept on their explicit integer scale.
+                    </p>
+
+                    <div class="code-block-wrapper" data-code="numerical">
+
+                        <div class="code-block-header">
+                            <span class="code-block-title">
+                                <i class="bi bi-code-slash me-1"></i>
+                                Python — Numerical Scaling
+                            </span>
+
+                            <button class="copy-btn" onclick="copyCode(this)">
+                                <i class="bi bi-clipboard"></i>
+                                Copy
+                            </button>
+                        </div>
+
+                        <pre class="code-block-pre"><code><span class="kw">from</span> sklearn.preprocessing <span class="kw">import</span> RobuseScaler
+
+scale_cols = [
+    <span class="str">'WorkExp'</span>,
+    <span class="str">'YearsCode'</span>,
+    <span class="str">'ai_tasks_count'</span>,
+    <span class="str">'agent_use_count'</span>,
+    <span class="str">'aifrustration_count'</span>,
+    <span class="str">'llm_count'</span>
+]
+
+scaler = <span class="fn">RobuseScaler</span>()
+df[scale_cols] = scaler.<span class="fn">fit_transform</span>(df[scale_cols])</code></pre>
+
+                    </div>
+
+                    
+
+                </div>
+
+                
+
+                <div id="final-dataset">
+
+                    <h3>Final Dataset</h3>
+
+                    <p>
+                        After all preprocessing steps, the modeling-ready
+                        dataset summary is:
+                    </p>
+
+                    <div class="final-dataset-card">
+
+                        <div class="row g-3 justify-content-center">
+
+                            <div class="col-4">
+                                <div class="summary-item">
+                                    <div class="summary-number">9,513</div>
+                                    <div class="summary-label">
+                                        Final Rows
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="summary-item">
+                                    <div class="summary-number">60</div>
+                                    <div class="summary-label">
+                                        Final Features
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="summary-item">
+                                    <div class="summary-number">3</div>
+                                    <div class="summary-label">
+                                        Target Classes
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <aside class="side-nav d-none d-lg-block">
+
+            <div class="side-nav-title">
+                Contents
+            </div>
+
+            <ul class="side-nav-list">
+
+                <li class="side-nav-item">
+
+                    <a href="#feature-engineering" class="side-nav-link active">
+                        Feature Engineering
+                    </a>
+
+                    <ul class="side-nav-sublist">
+
+                        <li>
+                            <a href="#target-construction" class="side-nav-link">
+                                Target Class Construction
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#filtering-developers" class="side-nav-link">
+                                Filtering Developers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#selecting-columns" class="side-nav-link">
+                                Selecting Columns
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#developer-type-bucketing" class="side-nav-link">
+                                Developer Type Bucketing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#ai-editor-features" class="side-nav-link">
+                                AI Editor Features
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#multiselect-transform" class="side-nav-link">
+                                Multi-Select Transform
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#ai-model-features" class="side-nav-link">
+                                AI Model Features
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="side-nav-item">
+
+                    <a href="#preprocessing-pipeline" class="side-nav-link">
+                        Preprocessing
+                    </a>
+
+                    <ul class="side-nav-sublist">
+
+                        
+
+                        <li>
+                            <a href="#encoding" class="side-nav-link">
+                                Encoding Features
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#missing-values" class="side-nav-link">
+                                Handling Missing Values
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#data-normalization" class="side-nav-link">
+                                Data Normalization
+                            </a>
+                        </li>
+
+                
+
+                        <li>
+                            <a href="#final-dataset" class="side-nav-link">
+                                Final Dataset
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </aside>
+
+    </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+
+
+
+<script src="{{ url_for('static', filename='js/preprocessing.js') }}"></script>
+
+{% endblock %}
